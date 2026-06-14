@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/webp" href="img/i.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Дополнительная информация - А.Т. Твардовский</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #f2efe4;
+            line-height: 1.5;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .site-wrapper {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #fffef7;
+        }
+
+        .site-header {
+            background: #2c3e2f;
+            padding: 28px 20px;
+            text-align: center;
+            border-bottom: 4px solid #c49a6c;
+            width: 100%;
+        }
+
+        .site-title {
+            font-family: 'Merriweather', 'Georgia', serif;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            color: #fef3da;
+            text-shadow: 2px 2px 0 #1f2f1f;
+            font-weight: 700;
+        }
+
+        .site-title span {
+            color: #e2b87a;
+        }
+
+        .site-sub {
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            color: #d4c29e;
+            margin-top: 6px;
+        }
+
+        .nav-menu {
+            background: #1e2a22;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px 20px;
+            border-bottom: 1px solid #c49a6c;
+            width: 100%;
+        }
+
+        .nav-menu a {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            color: #f2e3c9;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 22px;
+            border-radius: 40px;
+            transition: all 0.25s;
+            font-size: 1rem;
+            background: rgba(255,245,215,0.08);
+        }
+
+        .nav-menu a:hover {
+            background: #c49a6c;
+            color: #1e2a22;
+            transform: translateY(-2px);
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #3b5c2b, #5a3e1b);
+            padding: 45px 20px;
+            text-align: center;
+            border-bottom: 3px solid #e2b87a;
+            width: 100%;
+        }
+
+        .banner-text {
+            font-family: 'Merriweather', serif;
+            font-size: 2.3rem;
+            font-weight: bold;
+            color: #fff6e0;
+        }
+
+        .banner-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: #f9e0a0;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .main-content {
+            width: 100%;
+            max-width: 100%;
+            padding: 45px 50px;
+        }
+
+        .page-title {
+            font-family: 'Merriweather', serif;
+            font-size: 2rem;
+            color: #3b5c2b;
+            text-align: center;
+            margin-bottom: 35px;
+            border-bottom: 2px solid #c49a6c;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .title-center {
+            text-align: center;
+        }
+
+        .links-section {
+            margin-bottom: 40px;
+        }
+
+        .links-section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #b4652d;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid #c49a6c;
+        }
+
+        .links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .link-card {
+            background: #fefcf8;
+            border: 1px solid #e8e0ce;
+            border-radius: 16px;
+            padding: 15px 20px;
+            flex: 1 1 280px;
+            transition: all 0.2s;
+        }
+
+        .link-card:hover {
+            background: #f5f0e4;
+            transform: translateY(-3px);
+        }
+
+        .link-card a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #2c3e2f;
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .link-card a:hover {
+            color: #c49a6c;
+        }
+
+        .link-card p {
+            font-size: 0.85rem;
+            color: #6b4c2c;
+        }
+
+        .link-card .link-type {
+            display: inline-block;
+            background: #e8e0ce;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin-top: 10px;
+            color: #4a3b28;
+        }
+
+        /* ===== КНОПКА "НАВЕРХ" ===== */
+        .go-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #c49a6c;
+            color: #1e2a22;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .go-top:hover {
+            background: #e2b87a;
+            transform: translateY(-5px);
+            opacity: 1;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        .go-top.visible {
+            opacity: 0.8;
+            visibility: visible;
+        }
+
+        .footer {
+            background: #1f2b1c;
+            color: #cfd8c5;
+            padding: 30px 50px 25px;
+            border-top: 3px solid #b8874a;
+            width: 100%;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-copy {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .footer-copy p {
+            margin: 4px 0;
+        }
+
+        .to-main-btn {
+            background: #c49a6c;
+            color: #1e2a22;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 28px;
+            border-radius: 40px;
+            transition: 0.2s;
+        }
+
+        .to-main-btn:hover {
+            background: #e2b87a;
+        }
+
+        .footer-meta {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #3f4d37;
+        }
+
+        .footer-right {
+            text-align: right;
+            font-size: 11px;
+            margin-top: 5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        @media (max-width: 750px) {
+            .main-content {
+                padding: 25px 20px;
+            }
+            .banner-text {
+                font-size: 1.6rem;
+            }
+            .page-title {
+                font-size: 1.6rem;
+            }
+            .footer {
+                padding: 25px 20px;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-right {
+                text-align: center;
+            }
+            .links-section h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="site-header">
+        <div class="site-title">Александр Трифонович <span>Твардовский</span></div>
+        <div class="site-sub">жизнь, творчество, наследие</div>
+    </div>
+
+    <div class="nav-menu">
+        <a href="index.html">Главная</a>
+        <a href="bio.html">Биография</a>
+        <a href="works.html">Творчество</a>
+        <a href="vasily_terkin.html">Поэма «Василий Тёркин»</a>
+        <a href="New-world.html">Журнал «Новый мир»</a>
+        <a href="links.html">Список доп. информации</a>
+    </div>
+
+    <div class="hero-banner">
+        <div class="banner-text">Дополнительная информация</div>
+        <div class="banner-sub">Полезные ресурсы для углублённого изучения</div>
+    </div>
+
+    <div class="main-content">
+        <div class="title-center">
+            <h1 class="page-title">Список дополнительной информации и источники</h1>
+        </div>
+
+        <div class="links-section">
+            <h2>📚 Электронные библиотеки</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <a href="https://smol-history.ru/material/164" target="_blank">Твардовский А.Т. Собрание сочинений в шести томах.</a>
+                    <p>Твардовский А.Т. Собрание сочинений в шести томах. · А.Т. Твардовский. Сорбрание сочинений. Т. 1. 1978 г. · А.Т. Твардовский. Сорбрание сочинений. Т. 2. 1978 г.</p>
+                    <span class="link-type">📖 Научное издание</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://www.litres.ru/author/aleksandr-tvardovskiy/">Литрес (электронная библиотека)</a>
+                    <p>Все основные произведения Твардовского в удобном формате для чтения онлайн и скачивания.</p>
+                    <span class="link-type">📖 Читать онлайн</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://45parallel.net/aleksandr_tvardovskiy/stihi/?ysclid=mqdmepwazq556172467" target="_blank">Параллель — подборка стихотворений</a>
+                    <p>Большая подборка стихотворений Александра Твардовского, включая военную лирику и поздние стихи.</p>
+                    <span class="link-type">📝 Стихи</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <h2>🏛️ Музеи и архивные материалы</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <a href="https://goslitmuz.ru/" target="_blank">Государственный литературный музей (Москва)</a>
+                    <p>Фонды, посвящённые Твардовскому: рукописи поэм, фотографии, личные вещи, редакционные материалы «Нового мира». Действует постоянная экспозиция «Твардовский. Время. Слово».</p>
+                    <span class="link-type">🏛️ Музей</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://www.smolensk-museum.ru/" target="_blank">Музей-усадьба А.Т. Твардовского «Хутор Загорье»</a>
+                    <p>Мемориальный комплекс на родине поэта (Починковский район, Смоленская область). Восстановлен дом семьи Твардовских, воссоздана обстановка, проводятся ежегодные литературные праздники.</p>
+                    <span class="link-type">🏛️ Мемориальный музей</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://izbrannoe.de/periodical-2115-page-1" target="_blank">Электронный архив журнала «Новый мир» (1950–1970)</a>
+                    <p>Полная подборка содержания журнала «Новый мир» за 1960–1969 годы. Помогает ориентироваться в публикациях времён редакторства Твардовского, включая номера с Солженицыным, Гроссманом и поэтами-шестидесятниками.</p>
+                    <span class="link-type">📄 Архив</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <h2>🎥 Фильмы и видеолекции</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <a href="https://vkvideo.ru/video-60958526_456267541?t=1m56s">«Дом Твардовского. Документальный фильм о жизни и творчестве советского поэта (1980)»</a>
+                    <p>Фильм о жизненном пути поэта: детство на хуторе Загорье, война, создание «Василия Тёркина», работа в «Новом мире», борьба с цензурой, отношения с Солженицыным, отставка и последние годы.</p>
+                    <span class="link-type">🎬 Документальное кино</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://vk.com/video-215384118_456239075?ysclid=mqdmn48xun524566143">Александр Твардовский "Василий Тёркин" (лекция)»</a>
+                    <p>Лекция для старшеклассников и студентов.</p>
+                    <span class="link-type">📺 Видеолекция</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://smotrim.ru/brand/31508?ysclid=mqdn58nemi336365118">Фильм-спектакль «Василий Тёркин» 1979 года</a>
+                    <p>Фильм-спектакль «Василий Тёркин» 1979 года — это моноспектакль, созданный по одноимённой поэме Александра Твардовского. Он посвящён вымышленному герою — Василию Тёркину, солдату Великой Отечественной войны. </p>
+                    <span class="link-type">🎙️ Аудио</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <h2>📚 Научные статьи и исследования</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <a href="https://smol-history.ru/uploads/materials/files/363.pdf">А.Т. Твардовский: исследования и материалы</a>
+                    <p>.Т. Твардовский: исследования и материалы (международная научная конференция «Творчество А.Т. Твардовского в контексте русской и мировой культуры» (5–7 октября 2010))
+</p>
+                    <span class="link-type">📗 Научная работа</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://znamlit.ru/publication.php?id=2337&ysclid=mqdmw08q75522878626">А.Т. Твардовский. «Рабочие тетради 60-х годов»</a>
+                    <p>Дневники и заметки главного редактора «Нового мира» — уникальный материал о редакторской кухне, конфликтах с цензурой, оценках коллег (Солженицын, Гроссман, Ахматова).</p>
+                    <span class="link-type">📘 Архивные материалы</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://magazines.gorky.media/druzhba/2003/4/poslednij-akt.html?ysclid=mqdn0zdab0908524384">В. Лакшин. «А.Т. Твардовский в „Новом мире“»</a>
+                    <p>Воспоминания заместителя главного редактора Владимира Лакшина о работе с Твардовским, о публикации Солженицына, о драматической истории журнала.</p>
+                    <span class="link-type">📖 Мемуары</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <h2>🎧 Аудиокниги</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <a href="https://knigavuhe.org/author/aleksandr-tvardovskijj/?ysclid=mqdn8zca4l351225792">Книга в ухе</a>
+                    <p>Сборник всех аудиокниг произведений Твардоского</p>
+                    <span class="link-type">🎙️ Аудиокнига</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://my.mail.ru/music/search/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%20%D0%A2%D0%B2%D0%B0%D1%80%D0%B4%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20(%D1%87%D0%B8%D1%82%D0%B0%D0%B5%D1%82%20%D0%B0%D0%B2%D1%82%D0%BE%D1%80)?ysclid=mqdncqdds9626393851">Стихи Твардовского в его исполнении</a>
+                    <p>Сборник лучших стихотворений поэта.</p>
+                    <span class="link-type">🎙️ Поэзия</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <h2>🔗 Полезные ссылки</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B2%D0%B0%D1%80%D0%B4%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B8%D1%87" target="_blank">Википедия: А.Т. Твардовский</a>
+                    <p>Общая информация, подробная биография, библиография, списки наград, ссылки на первоисточники.</p>
+                    <span class="link-type">🌐 Энциклопедия</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://russkiymir.ru/publications/192047/?ysclid=mqdnkw4h18353065315">Фонд «Русский мир» о Твардовском</a>
+                    <p>Статьи и материалы о жизни и творчестве поэта, видеозаписи литературных вечеров, архивные фотографии.</p>
+                    <span class="link-type">🌐 Культурный фонд</span>
+                </div>
+                <div class="link-card">
+                    <a href="index.html">Вернуться на главную страницу</a>
+                    <p>Навигация по сайту: биография, творчество, «Василий Тёркин», «Новый мир».</p>
+                    <span class="link-type">🏠 Внутренняя ссылка</span>
+                </div>
+        <div id="kontakty" class="links-section">
+            <h2>📞 Контакты</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                      <a href="mailto:tdvorobev@chsu.ru" style="font-weight: bold; font-size: 1.05rem; margin-bottom: 5px; color: #2c3e2f; text-decoration: none;">📧 tdvorobev@chsu.ru</a>
+            <p>Электронная почта для связи (учебный проект)</p>
+                    <span class="link-type">📧 E-mail</span>
+                </div>
+                <div class="link-card">
+                    <a href="tel: +7 900 530-78-19"style="font-weight: bold; font-size: 1.05rem; margin-bottom: 5px; color: #2c3e2f; text-decoration: none;">📞 +7 900 530-78-19</a>
+                    <p>Телефон для связи </p>
+                    <span class="link-type">📞 Телефон</span>
+                </div>
+                <div class="link-card">
+                    <a href="https://www.chsu.ru" target="_blank">chsu.ru</a>
+                    <p>Официальный сайт Череповецкого государственного университета</p>
+                    <span class="link-type">🌐 Сайт вуза</span>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="go-top" id="goTopBtn">↑</a>
+
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="footer-copy">
+                <p>© 2026 Разработка курсовой работы</p>
+                <p>Студент гр. 1ПИб-02-3оп-25 | Воробьев Т.Д.</p>
+                <p>Череповецкий государственный университет</p>
+            </div>
+            <a href="index.html" class="to-main-btn">🏠 На главную</a>
+        </div>
+        <div class="footer-meta">
+            Web-программирование | Кафедра МПО ЭВМ | ИИТ ЧГУ | 2026
+        </div>
+        <div class="footer-right">
+            © 2026 Все права защищены
+        </div>
+    </div>
+</div>
+
+<script>
+    const goTopBtn = document.getElementById('goTopBtn');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            goTopBtn.classList.add('visible');
+        } else {
+            goTopBtn.classList.remove('visible');
+        }
+    });
+    
+    goTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+</body>
+</html>

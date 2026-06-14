@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/webp" href="img/i.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>А.Т. Твардовский | Главная</title>
+    <style>
+        /* ===== ОБНУЛЕНИЕ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== ТРИ ТИПА ШРИФТА ===== */
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #ece5d8;
+            line-height: 1.5;
+            width: 100%;
+            min-height: 100vh;
+            font-size: 16px;
+        }
+
+        .site-wrapper {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #fffef7;
+        }
+
+        /* ===== ШАПКА ===== */
+        .site-header {
+            background: #2c3e2f;
+            padding: 28px 20px;
+            text-align: center;
+            border-bottom: 4px solid #c49a6c;
+            width: 100%;
+        }
+
+        .site-title {
+            font-family: 'Merriweather', 'Georgia', serif;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            color: #fef3da;
+            text-shadow: 2px 2px 0 #1f2f1f;
+            font-weight: 700;
+        }
+
+        .site-title span {
+            color: #e2b87a;
+        }
+
+        .site-sub {
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            color: #d4c29e;
+            margin-top: 6px;
+        }
+
+        /* ===== НАВИГАЦИЯ ===== */
+        .nav-menu {
+            background: #1e2a22;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px 20px;
+            border-bottom: 1px solid #c49a6c;
+            width: 100%;
+        }
+
+        .nav-menu a {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            color: #f2e3c9;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 22px;
+            border-radius: 40px;
+            transition: all 0.25s ease;
+            font-size: 1rem;
+            background: rgba(255,245,215,0.08);
+        }
+
+        .nav-menu a:hover {
+            background: #c49a6c;
+            color: #1e2a22;
+            transform: translateY(-2px);
+        }
+
+        /* ===== БАННЕР ===== */
+        .hero-banner {
+            background: linear-gradient(135deg, #3b5c2b 0%, #5a3e1b 100%);
+            padding: 55px 20px;
+            text-align: center;
+            border-bottom: 3px solid #e2b87a;
+            width: 100%;
+        }
+
+        .banner-text {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff6e0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .banner-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            color: #f9e0a0;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+        .main-content {
+            width: 100%;
+            max-width: 100%;
+            padding: 45px 50px;
+        }
+
+        /* ===== ФОТОГРАФИЯ ===== */
+        .photo-section {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .tvardovsky-photo {
+            display: inline-block;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.25);
+            border: 4px solid #e2b87a;
+            background: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tvardovsky-photo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -15px rgba(0,0,0,0.3);
+        }
+
+        .tvardovsky-photo img {
+            width: 320px;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            margin-top: 12px;
+            font-family: 'Inter', sans-serif;
+            color: #6b4c2c;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* ===== SVG-иконка (графический объект) ===== */
+        .graphic-icon {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* ===== ОПИСАТЕЛЬНЫЙ БЛОК ===== */
+        .description-box {
+            background: #fef7e8;
+            padding: 32px 35px;
+            border-radius: 32px;
+            border-left: 6px solid #b4652d;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .description-box:hover {
+            background: #fef5e0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .description-box h2 {
+            font-family: 'Merriweather', serif;
+            color: #2c3e2f;
+            font-size: 1.9rem;
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #dccfae;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .description-text {
+            font-size: 1.08rem;
+            color: #2b2b1f;
+            text-align: justify;
+            line-height: 1.65;
+        }
+
+        .description-text p {
+            margin-bottom: 18px;
+            text-indent: 1.8em;
+        }
+
+        .highlight {
+            color: #b4652d;
+            font-weight: 700;
+        }
+
+        .quote-mini {
+            font-style: italic;
+            background: #e7dfce;
+            padding: 12px 20px;
+            border-radius: 50px;
+            margin-top: 20px;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            color: #3e3a2e;
+            transition: background 0.2s ease;
+        }
+
+        .quote-mini:hover {
+            background: #ddd0b8;
+        }
+
+        /* ===== КЛЮЧЕВЫЕ ВЕХИ (КАРТОЧКИ) ===== */
+        .timeline-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .timeline-card {
+            flex: 1;
+            min-width: 200px;
+            background: #fef7e8;
+            padding: 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid #ede3cf;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            background: #fef5e0;
+        }
+
+        .timeline-card h3 {
+            color: #b4652d;
+            font-family: 'Merriweather', serif;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .timeline-card ul {
+            margin-left: 20px;
+            font-size: 0.95rem;
+            color: #2c3e2f;
+        }
+
+        .timeline-card li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        /* ===== МНОГОУРОВНЕВЫЙ СПИСОК ===== */
+        .multilevel-list {
+            margin: 20px 0 0 30px;
+            font-size: 1.05rem;
+        }
+
+        .multilevel-list > li {
+            margin: 12px 0;
+            font-weight: 600;
+            color: #2c3e2f;
+        }
+
+        .multilevel-list ul {
+            margin-left: 25px;
+            margin-top: 8px;
+        }
+
+        .multilevel-list ul li {
+            font-weight: 400;
+            margin: 6px 0;
+        }
+
+        /* ===== ВЫРАВНИВАНИЕ ВПРАВО ===== */
+        .text-right {
+            text-align: right;
+        }
+
+        /* ===== ДЕКОРАТИВНАЯ ЦИТАТА ===== */
+        .decor-quote {
+            border: 3px double #c49a6c;
+            background: #fef5e8;
+            padding: 28px;
+            margin: 35px 0;
+            border-radius: 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .decor-quote:hover {
+            background: #fef0e0;
+            border-color: #b4652d;
+        }
+
+        .decor-quote p {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #3e3a2e;
+        }
+
+        /* ===== ФОРМА ОБРАТНОЙ СВЯЗИ ===== */
+        .feedback-form {
+            background: #ede7d9;
+            padding: 30px;
+            border-radius: 28px;
+            margin: 35px 0;
+            transition: all 0.3s ease;
+        }
+
+        .feedback-form:hover {
+            background: #e8e0d0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .feedback-form h3 {
+            font-family: 'Merriweather', serif;
+            color: #2c3e2f;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 40px;
+            border: 1px solid #cbc3b0;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #c49a6c;
+            box-shadow: 0 0 0 3px rgba(196, 154, 108, 0.2);
+        }
+
+        .form-group textarea {
+            border-radius: 20px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #c49a6c;
+            color: #1e2a22;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .submit-btn:hover {
+            background: #b8874a;
+            transform: scale(1.02);
+        }
+
+        /* ===== КНОПКА "НАВЕРХ" ===== */
+        .go-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #c49a6c;
+            color: #1e2a22;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .go-top:hover {
+            background: #e2b87a;
+            transform: translateY(-5px);
+            opacity: 1;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        .go-top.visible {
+            opacity: 0.8;
+            visibility: visible;
+        }
+
+        /* ===== ФУТЕР ===== */
+        .footer {
+            background: #1f2b1c;
+            color: #cfd8c5;
+            padding: 30px 50px 25px;
+            border-top: 3px solid #b8874a;
+            width: 100%;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-copy {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .footer-copy p {
+            margin: 4px 0;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .footer-links a {
+            color: #e2c289;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffdd99;
+            text-decoration: underline;
+        }
+
+        .footer-meta {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #3f4d37;
+            font-family: 'Fira Code', 'Roboto Mono', monospace;
+        }
+
+        .footer-right {
+            text-align: right;
+            font-size: 11px;
+            margin-top: 5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 750px) {
+            .main-content {
+                padding: 25px 20px;
+            }
+            .footer {
+                padding: 25px 20px;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .banner-text {
+                font-size: 1.8rem;
+            }
+            .footer-right {
+                text-align: center;
+            }
+            .timeline-grid {
+                flex-direction: column;
+            }
+            .tvardovsky-photo img {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="site-header">
+        <div class="site-title">Александр Трифонович <span>Твардовский</span></div>
+        <div class="site-sub">жизнь, творчество, наследие</div>
+    </div>
+
+    <div class="nav-menu">
+        <a href="index.html">Главная</a>
+        <a href="bio.html">Биография</a>
+        <a href="works.html">Творчество</a>
+        <a href="vasily_terkin.html">Поэма «Василий Тёркин»</a>
+        <a href="New-world.html">Журнал «Новый мир»</a>
+        <a href="links.html">Список доп. информации</a>
+    </div>
+
+    <div class="hero-banner">
+        <div class="banner-text">Поэт. Воин. Гражданин.</div>
+        <div class="banner-sub">«Я жил, я был — за всё на свете я отвечаю головой»</div>
+    </div>
+
+    <div class="main-content">
+        <div class="photo-section">
+            <div class="tvardovsky-photo">
+                <img src="img/tvardovsky.jpg" alt="Александр Трифонович Твардовский">
+            </div>
+            <div class="photo-caption">А.Т. Твардовский, 1941 год | Фронтовой корреспондент</div>
+        </div>
+
+        <!-- 4.2.9 ГРАФИЧЕСКИЙ ОБЪЕКТ №4: SVG-иконка (звезда/перо) -->
+        <div class="graphic-icon">
+            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L15 8.5L22 9.5L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9.5L9 8.5L12 2Z" fill="#c49a6c" stroke="#c49a6c" stroke-width="1"/>
+            </svg>
+        </div>
+
+        <div class="description-box">
+            <h2>О проекте</h2>
+            <div class="description-text">
+                <p><span class="highlight">Web-сайт, посвящённый А. Т. Твардовскому</span> — это информационно-образовательный ресурс, объединяющий ключевые факты биографии, анализ творческого пути и материалы о культурном наследии выдающегося русского советского поэта, прозаика и журналиста (1910–1971).</p>
+                <p>Александр Трифонович Твардовский — явление уникальное в русской литературе XX века. Поэт, чьё творчество стало «летописью эпохи», редактор, превративший журнал «Новый мир» в главный оппозиционный голос страны, военный корреспондент, прошедший две войны и создавший «Книгу про бойца», которую читали в окопах. Высокую оценку его творчеству давали Иван Бунин, Борис Пастернак, Анна Ахматова.</p>
+                <p>Сайт ориентирован на <span class="highlight">студентов, школьников, преподавателей</span> и всех, кто интересуется русской литературой XX века. Здесь вы найдёте полную хронику жизни, подробный обзор главных произведений, историю создания легендарной поэмы «Василий Тёркин», а также сведения о редакторской деятельности Твардовского в журнале «Новый мир», ставшем «рупором оттепели».</p>
+                <div class="quote-mini">«Вся суть — в одном-единственном завете: то, что скажу, до времени тая, я это знаю лучше всех на свете — живых и мёртвых, — знаю только я.» — А.Т. Твардовский</div>
+                <p style="margin-top: 15px;">Навигация интуитивно понятна, а адаптивный дизайн делает просмотр комфортным с любых устройств.</p>
+            </div>
+        </div>
+
+        <div style="margin: 45px 0 30px;">
+            <h2 style="font-family: 'Merriweather', serif; color: #2c3e2f; border-left: 5px solid #c49a6c; padding-left: 20px;">📅 Ключевые вехи жизни и творчества</h2>
+            <div class="timeline-grid">
+                <div class="timeline-card">
+                    <h3>1910–1930-е</h3>
+                    <ul>
+                        <li><strong>1910</strong> — Рождение на хуторе Загорье</li>
+                        <li><strong>1925</strong> — Первая публикация</li>
+                        <li><strong>1936</strong> — Поэма «Страна Муравия»</li>
+                        <li><strong>1939–1940</strong> — Участие в финской войне</li>
+                    </ul>
+                </div>
+                <div class="timeline-card">
+                    <h3>1941–1945</h3>
+                    <ul>
+                        <li><strong>1941–1945</strong> — Военный корреспондент</li>
+                        <li><strong>1942–1945</strong> — «Василий Тёркин»</li>
+                        <li><strong>1945</strong> — «Дом у дороги»</li>
+                        <li><strong>1946</strong> — Сталинская премия</li>
+                    </ul>
+                </div>
+                <div class="timeline-card">
+                    <h3>1950–1971</h3>
+                    <ul>
+                        <li><strong>1950–1970</strong> — Редактор «Нового мира»</li>
+                        <li><strong>1960</strong> — «За далью — даль»</li>
+                        <li><strong>1962</strong> — Публикация Солженицына</li>
+                        <li><strong>1971</strong> — Кончина поэта</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- МНОГОУРОВНЕВЫЙ СПИСОК (4.2.7) -->
+        <div style="margin: 45px 0 30px;">
+            <h2 style="font-family: 'Merriweather', serif; color: #2c3e2f; border-left: 5px solid #c49a6c; padding-left: 20px;">📚 Что вы найдёте на сайте</h2>
+            <ul class="multilevel-list">
+                <li>📖 <strong>Биография</strong>
+                    <ul>
+                        <li>Детство на хуторе Загорье и первые публикации</li>
+                        <li>Учёба в Смоленске и МИФЛИ</li>
+                        <li>Военные годы: от финской войны до Победы</li>
+                        <li>Последние годы и неопубликованное наследие</li>
+                    </ul>
+                </li>
+                <li>✍️ <strong>Творчество</strong>
+                    <ul>
+                        <li>Лирика: «Я убит подо Ржевом», «Памяти матери»</li>
+                        <li>Поэмы: «Страна Муравия», «Василий Тёркин»</li>
+                        <li>Проза: «Родина и чужбина»</li>
+                    </ul>
+                </li>
+                <li>🎖️ <strong>Поэма «Василий Тёркин»</strong> — история создания, образ героя</li>
+                <li>📰 <strong>Журнал «Новый мир»</strong> — эпоха Твардовского</li>
+            </ul>
+        </div>
+
+        <div class="decor-quote">
+            <p>«Нет, жизнь не обманула меня, не обошла стороной. Всё, что было, — было к месту.»</p>
+            <p style="margin-top: 12px;">— А.Т. Твардовский из «Рабочих тетрадей»</p>
+        </div>
+
+        <!-- ФОРМА (4.2.13) -->
+    <div class="feedback-form">
+    <h3>📬 Обратная связь</h3>
+    <form action="mailto:tdvorobev@chsu.ru" method="post" enctype="text/plain">
+        <div class="form-group">
+            <label>Ваше имя</label>
+            <input type="text" name="name" placeholder="Введите ваше имя" required>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="example@mail.ru" required>
+        </div>
+        <div class="form-group">
+            <label>Интересующий раздел</label>
+            <select name="section">
+                <option>Биография</option>
+                <option>Творчество</option>
+                <option>Василий Тёркин</option>
+                <option>Новый мир</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Сообщение</label>
+            <textarea name="message" rows="3" placeholder="Ваш вопрос или отзыв..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">📧 Отправить</button>
+    </form>
+</div>
+    </div>
+
+    <a href="#" class="go-top" id="goTopBtn">↑</a>
+
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="footer-copy">
+                <p>© 2026 Разработка курсовой работы</p>
+                <p>Студент гр. 1ПИб-02-3оп-25 | Воробьев Т.Д.</p>
+                <p>Череповецкий государственный университет</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">О проекте</a>
+                <a href="links.html#kontakty">Контакты</a>
+                <a href="links.html">Источники</a>
+            </div>
+        </div>
+        <div class="footer-meta">Web-программирование | ИИТ ЧГУ | 2026</div>
+        <div class="footer-right">© 2026 Все права защищены</div>
+    </div>
+</div>
+
+<script>
+    const goTopBtn = document.getElementById('goTopBtn');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) goTopBtn.classList.add('visible');
+        else goTopBtn.classList.remove('visible');
+    });
+    goTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+</body>
+</html>

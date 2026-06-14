@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/webp" href="img/i.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Биография А.Т. Твардовского</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #ece5d8;
+            line-height: 1.5;
+            width: 100%;
+            min-height: 100vh;
+            font-size: 16px;
+        }
+
+        .site-wrapper {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #fffef7;
+        }
+
+        .site-header {
+            background: #2c3e2f;
+            padding: 28px 20px;
+            text-align: center;
+            border-bottom: 4px solid #c49a6c;
+            width: 100%;
+        }
+
+        .site-title {
+            font-family: 'Merriweather', 'Georgia', serif;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            color: #fef3da;
+            text-shadow: 2px 2px 0 #1f2f1f;
+            font-weight: 700;
+        }
+
+        .site-title span {
+            color: #e2b87a;
+        }
+
+        .site-sub {
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            color: #d4c29e;
+            margin-top: 6px;
+        }
+
+        .nav-menu {
+            background: #1e2a22;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px 20px;
+            border-bottom: 1px solid #c49a6c;
+            width: 100%;
+        }
+
+        .nav-menu a {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            color: #f2e3c9;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 22px;
+            border-radius: 40px;
+            transition: all 0.25s ease;
+            font-size: 1rem;
+            background: rgba(255,245,215,0.08);
+        }
+
+        .nav-menu a:hover {
+            background: #c49a6c;
+            color: #1e2a22;
+            transform: translateY(-2px);
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #3b5c2b 0%, #5a3e1b 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #e2b87a;
+            width: 100%;
+        }
+
+        .banner-text {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff6e0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .banner-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: #f9e0a0;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .bio-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 40px 50px;
+            gap: 40px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .sidebar-nav {
+            flex: 0 0 260px;
+            background: #f8f3e8;
+            border-radius: 28px;
+            padding: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+            border: 1px solid #e0d5be;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-nav:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .sidebar-nav h3 {
+            font-family: 'Merriweather', serif;
+            color: #2c3e2f;
+            font-size: 1.3rem;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #c49a6c;
+            margin-bottom: 18px;
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin: 14px 0;
+        }
+
+        .sidebar-nav a {
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            color: #4a3b28;
+            font-weight: 500;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 40px;
+            transition: all 0.2s ease;
+            background: #fffef7;
+            border: 1px solid #e2d5bc;
+        }
+
+        .sidebar-nav a:hover {
+            background: #c49a6c;
+            color: white;
+            border-color: #c49a6c;
+            transform: translateX(5px);
+        }
+
+        .bio-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .bio-content h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.2rem;
+            color: #3b5c2b;
+            margin-bottom: 25px;
+            border-left: 5px solid #c49a6c;
+            padding-left: 20px;
+        }
+
+        .bio-section {
+            background: #fefcf8;
+            border-radius: 24px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid #ede3cf;
+            scroll-margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .bio-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+
+        .bio-section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.6rem;
+            color: #b4652d;
+            margin-bottom: 18px;
+            display: inline-block;
+            border-bottom: 3px solid #e2b87a;
+            padding-bottom: 5px;
+        }
+
+        .bio-section p {
+            font-size: 1.05rem;
+            color: #2b2b1f;
+            text-align: justify;
+            line-height: 1.65;
+            margin-bottom: 12px;
+            text-indent: 1.8em;
+        }
+
+        .bio-section .date {
+            font-family: 'Roboto Mono', 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: #8b6946;
+            background: #f1ebdd;
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 30px;
+            margin-bottom: 12px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .awards-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0 20px;
+            background: #fffef7;
+            border: 1px solid #d6cfb8;
+        }
+
+        .awards-table th, 
+        .awards-table td {
+            border: 1px solid #d6cfb8;
+            padding: 10px 12px;
+            vertical-align: top;
+        }
+
+        .awards-table th {
+            background: #e8e0ce;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .awards-table td {
+            text-align: left;
+        }
+
+        .awards-table td:last-child {
+            text-align: justify;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        /* ===== КНОПКА "НАВЕРХ" ===== */
+        .go-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #c49a6c;
+            color: #1e2a22;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            opacity: 0.8;
+        }
+
+        .go-top:hover {
+            background: #e2b87a;
+            transform: translateY(-5px);
+            opacity: 1;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+
+        /* Анимация появления кнопки */
+        .go-top {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .go-top.visible {
+            opacity: 0.8;
+            visibility: visible;
+        }
+
+        .go-top.visible:hover {
+            opacity: 1;
+        }
+
+        .footer {
+            background: #1f2b1c;
+            color: #cfd8c5;
+            padding: 30px 50px 25px;
+            border-top: 3px solid #b8874a;
+            width: 100%;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-copy {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .footer-copy p {
+            margin: 4px 0;
+        }
+
+        .to-main-btn {
+            background: #c49a6c;
+            color: #1e2a22;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            padding: 12px 32px;
+            border-radius: 60px;
+            transition: all 0.25s ease;
+            display: inline-block;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .to-main-btn:hover {
+            background: #e2b87a;
+            transform: scale(1.02);
+            color: #1f2b1c;
+        }
+
+        .footer-meta {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #3f4d37;
+            font-family: 'Fira Code', 'Roboto Mono', monospace;
+        }
+
+        .footer-right {
+            text-align: right;
+            font-size: 11px;
+            margin-top: 5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        @media (max-width: 850px) {
+            .bio-container {
+                flex-direction: column;
+                padding: 30px 20px;
+            }
+            .sidebar-nav {
+                position: static;
+                width: 100%;
+            }
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .banner-text {
+                font-size: 1.8rem;
+            }
+            .footer-right {
+                text-align: center;
+            }
+            .go-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 750px) {
+            .bio-container {
+                padding: 25px 20px;
+            }
+            .footer {
+                padding: 25px 20px;
+            }
+            .awards-table th, 
+            .awards-table td {
+                padding: 6px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="site-wrapper">
+    <div class="site-header">
+        <div class="site-title">Александр Трифонович <span>Твардовский</span></div>
+        <div class="site-sub">жизнь, творчество, наследие</div>
+    </div>
+
+    <div class="nav-menu">
+        <a href="index.html">Главная</a>
+        <a href="bio.html">Биография</a>
+        <a href="works.html">Творчество</a>
+        <a href="vasily_terkin.html">Поэма «Василий Тёркин»</a>
+        <a href="New-world.html">Журнал «Новый мир»</a>
+        <a href="links.html">Список доп. информации</a>
+    </div>
+
+    <div class="hero-banner">
+        <div class="banner-text">Биография</div>
+        <div class="banner-sub">Жизненный путь поэта и гражданина</div>
+    </div>
+
+    <div class="bio-container">
+        <div class="sidebar-nav">
+            <h3>📖 Содержание</h3>
+            <ul>
+                <li><a href="#detstvo">Детство и юность</a></li>
+                <li><a href="#smolensk">Смоленск</a></li>
+                <li><a href="#mifli">МИФЛИ и первый успех</a></li>
+                <li><a href="#voenkor">Военный корреспондент</a></li>
+                <li><a href="#redaktor">Главный редактор «Нового мира»</a></li>
+                <li><a href="#poslednie">Последние годы</a></li>
+            </ul>
+        </div>
+
+        <div class="bio-content">
+            <h1>Биография Александра Трифоновича Твардовского</h1>
+
+            <div id="detstvo" class="bio-section">
+                <div class="date">1910 — 1920-е годы</div>
+                <h2>🌾 Детство и юность</h2>
+                <p>Александр Трифонович Твардовский родился <strong>8 (21) июня 1910 года</strong> на хуторе Загорье (ныне Починковский район Смоленской области) в семье деревенского кузнеца <strong>Трифона Гордеевича Твардовского</strong>. Отец, человек грамотный и начитанный, выписывал газеты и журналы — «Нива», «Журнал для всех», что определило ранний интерес сына к чтению и литературе. Мать, <strong>Мария Митрофановна</strong> (урождённая Плескачевская), происходила из обедневшей дворянской семьи, она привила будущему поэту любовь к русской природе, народной песне и сказке.</p>
+                <p>Первое стихотворение Твардовский написал в <strong>1925 году</strong> и отправил его в смоленскую газету «Смоленская деревня». Стихотворение <strong>«Новая изба»</strong> было опубликовано — так начался путь поэта. В том же году он начал работать селькором, публикуясь в различных газетах Смоленска, часто пешком преодолевая десятки километров, чтобы доставить материалы в редакцию.</p>
+                <p>В 1920-е годы семья Твардовских пострадала от раскулачивания. Отец был сослан, а хутор Загорье конфискован. Эта трагическая страница биографии надолго определила внутреннюю драму поэта, которую он позже осмыслил в поэме <strong>«По праву памяти»</strong> (опубликована только в 1987 году).</p>
+            </div>
+
+            <div id="smolensk" class="bio-section">
+                <div class="date">1920-е — 1930-е</div>
+                <h2>🏛️ Смоленск</h2>
+                <p>В конце 1920-х годов Твардовский переезжает в Смоленск, чтобы получить образование и заниматься литературой. Он посещает лекции в Смоленском педагогическом институте, но закончить его не удаётся — из-за «классового происхождения» его отчисляют. Тем не менее он продолжает активно печататься в местных газетах — «Рабочий путь», «Колхозная правда».</p>
+                <p>В Смоленске Твардовский входит в литературную среду, сближается с <strong>Михаилом Исаковским</strong>, который стал его другом и наставником. Именно Исаковский помог молодому поэту поверить в свои силы и преодолеть многочисленные литературные неудачи. В смоленский период Твардовский пишет о коллективизации, о жизни деревни, о «новом» и «старом» в крестьянском быту. Его стихи становятся заметным явлением в местной литературе.</p>
+                <p>В <strong>1936 году</strong> выходит первая крупная поэма Твардовского — <strong>«Страна Муравия»</strong> — о крестьянине Никите Моргунке, который в поисках «счастливой земли» приходит к осознанию правоты колхозного строя. Поэма имела огромный успех и была замечена в Москве. В <strong>1941 году</strong> она была удостоена Сталинской премии II степени, что стало признанием литературных заслуг поэта.</p>
+            </div>
+
+            <div id="mifli" class="bio-section">
+                <div class="date">1936 — 1941</div>
+                <h2>📚 МИФЛИ и первый успех</h2>
+                <p>В <strong>1936 году</strong> Твардовский переезжает в Москву и поступает в Московский институт истории, философии и литературы (<strong>МИФЛИ</strong>) — элитное учебное заведение, готовившее будущую литературную элиту страны. Здесь он учился у корифеев отечественной филологии, а его сокурсниками стали будущие классики советской поэзии и прозы.</p>
+                <p>В эти годы Твардовский активно публикуется в центральных изданиях, пишет переводы, работает над новыми поэмами. Среди его литературных кумиров того времени — <strong>Александр Пушкин, Николай Некрасов, Иван Бунин</strong>. Позже Бунин высоко оценит творчество Твардовского, назвав «Василия Тёркина» выдающимся произведением: «Это подлинно народная, талантливая, умная книга».</p>
+                <p>В МИФЛИ Твардовский не только учился, но и преподавал, вёл литературный кружок. Здесь он написал ряд значительных стихотворений, которые вошли в его первый московский сборник. Учёба была прервана началом Великой Отечественной войны.</p>
+            </div>
+
+            <div id="voenkor" class="bio-section">
+                <div class="date">1939 — 1945</div>
+                <h2>🎖️ Военный корреспондент</h2>
+                <p>Твардовский участвовал в <strong>двух войнах</strong>: советско-финской (1939–1940) и Великой Отечественной (1941–1945). На финской войне он работал корреспондентом газеты Ленинградского военного округа «На страже Родины». Именно тогда в газете появился фельетонный герой <strong>Вася Тёркин</strong> — весёлый, неунывающий боец, прообраз будущего знаменитого персонажа. В 1940 году за участие в финской кампании Твардовский был награждён орденом Красной Звезды.</p>
+                <p>С первого дня Великой Отечественной войны Твардовский на фронте. Он служит в газетах <strong>«Красноармейская правда»</strong> и <strong>«Красная звезда»</strong>, пишет очерки, стихи, фельетоны, поднимая боевой дух солдат. По словам самого поэта, «Василий Тёркин» — это «книга про бойца, без начала и конца», которую он читал солдатам прямо в окопах, правя текст по их подсказкам. Солдаты с нетерпением ждали новых глав, переписывали их от руки, заучивали наизусть.</p>
+                <p>Твардовский прошёл трудными дорогами войны — от Волги до Берлина. За годы войны был награждён орденами Отечественной войны I и II степени. Война стала главной темой его творчества на долгие годы. В 1945 году он закончил поэму «Василий Тёркин», а в 1946 году получил за неё Сталинскую премию I степени. В том же году вышла поэма «Дом у дороги» — о трагической судьбе солдатской семьи, угнанной в Германию.</p>
+            </div>
+
+            <div id="redaktor" class="bio-section">
+                <div class="date">1950 — 1970</div>
+                <h2>📖 Главный редактор журнала «Новый мир»</h2>
+                <p>Твардовский дважды возглавлял журнал <strong>«Новый мир»</strong>: с 1950 по 1954 год и с 1958 по 1970 год. Второй период стал «золотым веком» издания. Журнал при Твардовском стал главной трибуной «шестидесятников», публикуя произведения, которые не решались печатать другие редакции. «Новый мир» был не просто литературным журналом — он стал центром общественной мысли, рупором правды в эпоху «оттепели» и последующего «застоя».</p>
+                <p>Важнейшей вехой стало <strong>опубликование повести Александра Солженицына «Один день Ивана Денисовича» в ноябре 1962 года</strong> — первого художественного произведения о сталинских лагерях, вышедшего в СССР. Твардовский лично добивался разрешения на публикацию у Хрущёва, понимая историческое значение этого текста. Позже в «Новом мире» печатались «Матрёнин двор» Солженицына, стихи Андрея Вознесенского, Беллы Ахмадулиной, Евгения Евтушенко, проза Василия Шукшина, Юрия Трифонова, Фазиля Искандера.</p>
+                <p>Твардовский вёл непримиримую борьбу с цензурой, партийной бюрократией и «социалистическим реализмом» как окостеневшей догмой. Он отказывался печатать «идеологически выверенные» конъюнктурные произведения, отстаивал каждую публикацию, вступал в конфликты с членами редколлегии и партийными чиновниками. В 1960-е годы давление на журнал усилилось. После смещения Хрущёва и наступления брежневской «эпохи застоя» позиции «Нового мира» стали шаткими.</p>
+                <p>В <strong>феврале 1970 года</strong> после очередной травли в партийной печати Твардовский был вынужден покинуть пост главного редактора. Вместе с ним ушла и большая часть его команды — А. Кондратович, В. Лакшин, И. Сац, Б. Закс и другие. Это стало концом целой эпохи в истории русской литературы и журналистики.</p>
+            </div>
+
+            <div id="poslednie" class="bio-section">
+                <div class="date">1970 — 1971</div>
+                <h2>🕯️ Последние годы</h2>
+                <p>После увольнения из «Нового мира» Твардовский тяжело переживал разрыв с любимым делом. Он продолжал писать, но его здоровье быстро ухудшалось. В эти годы он завершал работу над поэмой <strong>«По праву памяти»</strong> (1966–1969), в которой впервые открыто говорил о раскулачивании своей семьи и о преступлениях сталинского режима. При жизни поэта поэма не была опубликована — она увидела свет только в 1987 году, уже в перестройку.</p>
+                <p>Александр Трифонович Твардовский скончался <strong>18 декабря 1971 года</strong> в посёлке Красная Пахра (Подмосковье). Похоронен на Новодевичьем кладбище в Москве. На его могиле — скромный памятник с высеченными словами: «Я жил, я был — за всё на свете я отвечаю головой».</p>
+                <p>После смерти поэта его наследие долгое время оставалось недооценённым официальной критикой. Однако сегодня Твардовский признан одним из величайших русских поэтов XX века, чьё творчество стало честной летописью трагической эпохи.</p>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <h2 style="font-family: 'Merriweather', serif; color: #3b5c2b; margin-bottom: 15px;">🏆 Награды А.Т. Твардовского</h2>
+                <table class="awards-table">
+                    <thead>
+                        <tr><th>Год</th><th>Награда</th><th>За что</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1939</td><td>орден Ленина</td><td>—</td></tr>
+                        <tr><td>1940</td><td>орден Красной Звезды</td><td>за участие в советско-финской войне</td></tr>
+                        <tr><td>1941</td><td>Сталинская премия II степени</td><td>поэма «Страна Муравия»</td></tr>
+                        <tr><td>1944</td><td>орден Отечественной войны II степени</td><td>—</td></tr>
+                        <tr><td>1945</td><td>орден Отечественной войны I степени</td><td>—</td></tr>
+                        <tr><td>1946</td><td>Сталинская премия I степени</td><td>поэма «Василий Тёркин»</td></tr>
+                        <tr><td>1947</td><td>Сталинская премия II степени</td><td>поэма «Дом у дороги»</td></tr>
+                        <tr><td>1960</td><td>орден Ленина</td><td>—</td></tr>
+                        <tr><td>1961</td><td>Ленинская премия</td><td>поэма «За далью — даль»</td></tr>
+                        <tr><td>1967</td><td>орден Ленина</td><td>—</td></tr>
+                        <tr><td>1970</td><td>орден Трудового Красного Знамени</td><td>—</td></tr>
+                        <tr><td>1971</td><td>Государственная премия СССР</td><td>сборник «Из лирики этих лет. 1959–1967»</td></tr>
+                        <tr><td>1986</td><td>Почётный гражданин Смоленска</td><td>посмертно</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- ФРЕЙМ ДЛЯ BIO.HTML: Карта музея-усадьбы (в стиле New-world.html) -->
+<div style="margin: 30px 0 15px; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); background: #2c3e2f;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2313.662191574507!2d32.54082227708396!3d54.55708018344892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ce7c600be7d6b7%3A0xcdbdf4eb49b14651!2z0JzRg9C30LXQuS3Rg9GB0LDQtNGM0LHQsCDQkC4g0KLQstCw0YDQtNC-0LLRgdC60L7Qs9C-!5e0!3m2!1sru!2sru!4v1781439346478!5m2!1sru!2sru" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <div class="video-caption" style="text-align: center; margin-top: 12px; font-size: 0.85rem; color: #6b4c2c; font-style: italic;">
+        🗺️ Музей-усадьба А.Т. Твардовского «Хутор Загорье» | Google Maps
+    </div>
+</div>
+        </div>
+    </div>
+
+    <!-- КНОПКА "НАВЕРХ" -->
+    <a href="#" class="go-top" id="goTopBtn">↑</a>
+
+    <div class="footer">
+        <div class="footer-inner">
+            <div class="footer-copy">
+                <p>© 2026 Разработка курсовой работы</p>
+                <p>Студент гр. 1ПИб-02-3оп-25 | Воробьев Т.Д.</p>
+                <p>Череповецкий государственный университет</p>
+            </div>
+            <a href="index.html" class="to-main-btn">🏠 На главную</a>
+        </div>
+        <div class="footer-meta">
+            Web-программирование | ИИТ ЧГУ | 2026
+        </div>
+        <div class="footer-right">
+            © 2026 Все права защищены
+        </div>
+    </div>
+</div>
+
+<!-- СКРИПТ ДЛЯ КНОПКИ "НАВЕРХ" -->
+<script>
+    const goTopBtn = document.getElementById('goTopBtn');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            goTopBtn.classList.add('visible');
+        } else {
+            goTopBtn.classList.remove('visible');
+        }
+    });
+    
+    goTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+</body>
+</html>
