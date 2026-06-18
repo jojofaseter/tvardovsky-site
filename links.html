@@ -191,7 +191,81 @@
             color: #4a3b28;
         }
 
-        /* ===== КНОПКА "НАВЕРХ" ===== */
+        /*  ФОРМА ОБРАТНОЙ СВЯЗИ  */
+        .feedback-form {
+            background: #ede7d9;
+            padding: 30px;
+            border-radius: 28px;
+            margin: 15px 0 35px;
+            transition: all 0.3s ease;
+            border: 1px solid #e0d5be;
+        }
+
+        .feedback-form:hover {
+            background: #e8e0d0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .feedback-form h3 {
+            font-family: 'Merriweather', serif;
+            color: #2c3e2f;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 40px;
+            border: 1px solid #cbc3b0;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #c49a6c;
+            box-shadow: 0 0 0 3px rgba(196, 154, 108, 0.2);
+        }
+
+        .form-group textarea {
+            border-radius: 20px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #c49a6c;
+            color: #1e2a22;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .submit-btn:hover {
+            background: #b8874a;
+            transform: scale(1.02);
+        }
+
+        /*  КНОПКА "НАВЕРХ" */
         .go-top {
             position: fixed;
             bottom: 30px;
@@ -303,6 +377,9 @@
             .links-section h2 {
                 font-size: 1.3rem;
             }
+            .feedback-form {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -400,8 +477,7 @@
             <div class="links-grid">
                 <div class="link-card">
                     <a href="https://smol-history.ru/uploads/materials/files/363.pdf">А.Т. Твардовский: исследования и материалы</a>
-                    <p>.Т. Твардовский: исследования и материалы (международная научная конференция «Творчество А.Т. Твардовского в контексте русской и мировой культуры» (5–7 октября 2010))
-</p>
+                    <p>.Т. Твардовский: исследования и материалы (международная научная конференция «Творчество А.Т. Твардовского в контексте русской и мировой культуры» (5–7 октября 2010))</p>
                     <span class="link-type">📗 Научная работа</span>
                 </div>
                 <div class="link-card">
@@ -451,17 +527,21 @@
                     <p>Навигация по сайту: биография, творчество, «Василий Тёркин», «Новый мир».</p>
                     <span class="link-type">🏠 Внутренняя ссылка</span>
                 </div>
+            </div>
+        </div>
+
+        <!--  КОНТАКТЫ (ОСТАЮТСЯ)  -->
         <div id="kontakty" class="links-section">
             <h2>📞 Контакты</h2>
             <div class="links-grid">
                 <div class="link-card">
-                      <a href="mailto:tdvorobev@chsu.ru" style="font-weight: bold; font-size: 1.05rem; margin-bottom: 5px; color: #2c3e2f; text-decoration: none;">📧 tdvorobev@chsu.ru</a>
-            <p>Электронная почта для связи (учебный проект)</p>
+                    <a href="mailto:tdvorobev@chsu.ru" style="font-weight: bold; font-size: 1.05rem; margin-bottom: 5px; color: #2c3e2f; text-decoration: none;">📧 tdvorobev@chsu.ru</a>
+                    <p>Электронная почта для связи (учебный проект)</p>
                     <span class="link-type">📧 E-mail</span>
                 </div>
                 <div class="link-card">
-                    <a href="tel: +7 900 530-78-19"style="font-weight: bold; font-size: 1.05rem; margin-bottom: 5px; color: #2c3e2f; text-decoration: none;">📞 +7 900 530-78-19</a>
-                    <p>Телефон для связи </p>
+                    <a href="tel: +7 900 530-78-19" style="font-weight: bold; font-size: 1.05rem; margin-bottom: 5px; color: #2c3e2f; text-decoration: none;">📞 +7 900 530-78-19</a>
+                    <p>Телефон для связи</p>
                     <span class="link-type">📞 Телефон</span>
                 </div>
                 <div class="link-card">
@@ -471,7 +551,34 @@
                 </div>
             </div>
         </div>
-            </div>
+
+        <!--  ФОРМА ОБРАТНОЙ СВЯЗИ (ДОБАВЛЕНА СНИЗУ)-->
+        <div class="feedback-form">
+            <h3>📬 Обратная связь</h3>
+            <form action="mailto:tdvorobev@chsu.ru" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label>Ваше имя</label>
+                    <input type="text" name="name" placeholder="Введите ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label>Интересующий раздел</label>
+                    <select name="section">
+                        <option>Биография</option>
+                        <option>Творчество</option>
+                        <option>Василий Тёркин</option>
+                        <option>Новый мир</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Сообщение</label>
+                    <textarea name="message" rows="3" placeholder="Ваш вопрос или отзыв..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">📧 Отправить</button>
+            </form>
         </div>
     </div>
 
