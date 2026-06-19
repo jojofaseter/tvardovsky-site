@@ -1,0 +1,253 @@
+/* сайт по твардовскому */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;background:#ece5d8;line-height:1.5;min-height:100vh;font-size:16px}
+.site-wrapper{max-width:100%;background:#fffef7}
+
+/* шапка */
+.site-header{background:linear-gradient(165deg,#1f2f1f 0%,#2c3e2f 40%,#3a4d3a 100%);padding:28px 20px;text-align:center;border-bottom:4px solid #c49a6c}
+.site-title{font-family:'Merriweather',Georgia,serif;font-size:2.2rem;letter-spacing:1px;color:#fef3da;text-shadow:2px 2px 0 #1f2f1f;font-weight:700}
+.site-title span{color:#e2b87a}
+.site-sub{font-size:.85rem;font-family:Arial,sans-serif;color:#d4c29e;margin-top:6px;letter-spacing:2px;text-transform:uppercase;font-weight:300}
+
+/* меню */
+.nav-menu{background:#1e2a22;display:flex;justify-content:center;flex-wrap:wrap;gap:8px;padding:12px 20px;border-bottom:1px solid #c49a6c}
+.nav-menu a{font-family:Arial,sans-serif;color:#f2e3c9;text-decoration:none;font-weight:600;padding:8px 22px;border-radius:40px;transition:all .3s ease;font-size:1rem;background:rgba(255,245,215,0.08)}
+.nav-menu a:hover{background:#c49a6c;color:#1e2a22;transform:translateY(-2px)}
+
+/* баннер */
+.hero-banner{background:linear-gradient(165deg,#3b5c2b 0%,#4a6a35 40%,#5a3e1b 100%);padding:40px 20px;text-align:center;border-bottom:3px solid #e2b87a}
+.hero-banner.banner-tall{padding:55px 20px}
+.banner-text{font-family:'Merriweather',Georgia,serif;font-size:2.5rem;font-weight:800;color:#fff6e0;text-shadow:3px 3px 6px rgba(0,0,0,0.3)}
+.banner-text.banner-large{font-size:2.8rem}
+.banner-sub{font-family:Arial,sans-serif;font-size:1.1rem;color:#f9e0a0;margin-top:10px;font-style:italic}
+
+/* контент */
+.main-content{padding:45px 50px}
+.main-content.centered{max-width:1200px;margin:0 auto}
+.title-center{text-align:center}
+.page-title{font-family:'Merriweather',Georgia,serif;font-size:2rem;color:#3b5c2b;text-align:center;margin-bottom:35px;border-bottom:2px solid #c49a6c;display:inline-block;padding-bottom:10px}
+
+/* карточки */
+.content-card{background:#fefcf8;border-radius:24px;padding:25px 30px;margin-bottom:30px;box-shadow:0 4px 12px rgba(0,0,0,0.04);border:1px solid #ede3cf;transition:all .3s ease}
+.content-card:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(0,0,0,0.12);border-color:#e2b87a}
+.content-card h2{font-family:'Merriweather',Georgia,serif;font-size:1.6rem;color:#b4652d;margin-bottom:18px;display:inline-block;border-bottom:3px solid #e2b87a;padding-bottom:5px}
+.content-card h3{font-family:'Merriweather',Georgia,serif;font-size:1.25rem;color:#b4652d;margin:20px 0 10px}
+.content-card p{font-size:1.05rem;color:#2b2b1f;text-align:justify;line-height:1.65;margin-bottom:12px;text-indent:25px}
+.content-card p:last-of-type{margin-bottom:0}
+.content-card .date{font-family:'Courier New',monospace;font-size:.85rem;color:#8b6946;background:#f1ebdd;display:inline-block;padding:3px 12px;border-radius:30px;margin-bottom:12px}
+
+/* боковая панель */
+.sidebar-nav{flex:0 0 260px;background:#f8f3e8;border-radius:28px;padding:20px;height:fit-content;position:sticky;top:20px;border:1px solid #e0d5be;transition:all .3s ease}
+.sidebar-nav h3{font-family:'Merriweather',Georgia,serif;color:#2c3e2f;font-size:1.3rem;padding-bottom:12px;border-bottom:2px solid #c49a6c;margin-bottom:18px}
+.sidebar-nav ul{list-style:none}
+.sidebar-nav li{margin:14px 0}
+.sidebar-nav a{text-decoration:none;font-family:Arial,sans-serif;color:#4a3b28;font-weight:500;display:block;padding:8px 12px;border-radius:40px;transition:all .3s ease;background:#fffef7;border:1px solid #e2d5bc}
+.sidebar-nav a:hover{background:#c49a6c;color:#fff;border-color:#c49a6c;transform:translateX(5px)}
+
+/* таблица */
+.awards-table{width:100%;border-collapse:collapse;margin:30px 0 20px;background:#fffef7;border:1px solid #d6cfb8;font-size:.95rem}
+.awards-table th,.awards-table td{border:1px solid #d6cfb8;padding:10px 12px;vertical-align:top}
+.awards-table th{background:linear-gradient(135deg,#e8e0ce 0%,#ddd0b8 100%);text-align:center;font-weight:700}
+.awards-table td{text-align:left}
+.awards-table td:last-child{text-align:justify}
+.awards-table tbody tr:nth-child(even){background:rgba(196,154,108,0.05)}
+.awards-table tbody tr:hover{background:rgba(196,154,108,0.12)}
+
+/* фото */
+.photo-section{text-align:center;margin-bottom:45px}
+.tvardovsky-photo{display:inline-block;border-radius:28px;overflow:hidden;box-shadow:0 20px 30px -12px rgba(0,0,0,0.25);border:4px solid #e2b87a;background:#fff;transition:all .3s ease}
+.tvardovsky-photo:hover{transform:translateY(-5px)}
+.tvardovsky-photo img{width:320px;height:auto;display:block}
+.photo-caption{margin-top:12px;font-family:Arial,sans-serif;color:#6b4c2c;font-weight:500;font-size:.9rem;font-style:italic}
+
+/* галерея */
+.photo-gallery{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;margin:35px 0}
+.photo-card{flex:0 0 320px;width:320px;text-align:center;background:#fefcf8;border-radius:16px;padding:15px;box-shadow:0 4px 12px rgba(0,0,0,0.05);border:1px solid #ede3cf;transition:all .3s ease}
+.photo-card:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(0,0,0,0.15);border-color:#e2b87a}
+.photo-card img{width:100%;height:320px;object-fit:contain;border-radius:12px;background:#f2efe4}
+.photo-card p{margin-top:12px;font-size:.85rem;color:#6b4c2c}
+.video-caption{text-align:center;margin:12px 0 20px;font-size:.85rem;color:#6b4c2c;font-style:italic}
+
+/* кнопка наверх */
+.go-top{position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:#c49a6c;color:#1e2a22;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:24px;font-weight:bold;transition:all .4s cubic-bezier(.25,.46,.45,.94);box-shadow:0 4px 12px rgba(0,0,0,0.2);z-index:1000;opacity:0;visibility:hidden}
+.go-top:hover{background:#e2b87a;transform:translateY(-5px)}
+.go-top.visible{opacity:.85;visibility:visible}
+.go-top.visible:hover{opacity:1}
+
+/* кнопки */
+.to-main-btn,.submit-btn{background:#c49a6c;color:#1e2a22;text-decoration:none;font-family:Arial,sans-serif;font-weight:700;padding:12px 32px;border-radius:60px;transition:all .3s ease;display:inline-block;font-size:1rem;border:none;cursor:pointer}
+.to-main-btn:hover,.submit-btn:hover{background:#e2b87a;transform:scale(1.02)}
+.submit-btn{padding:10px 28px;border:1px solid rgba(255,255,255,0.2)}
+
+/* форма */
+.feedback-form{background:linear-gradient(135deg,#ede7d9 0%,#e2d5bc 100%);padding:30px;border-radius:28px;margin:15px 0 35px;transition:all .3s ease;border:1px solid #e0d5be}
+.feedback-form h3{font-family:'Merriweather',Georgia,serif;color:#2c3e2f;margin-bottom:20px;font-size:1.5rem}
+.form-group{margin-bottom:15px}
+.form-group label{display:block;font-weight:600;margin-bottom:5px;font-family:Arial,sans-serif;color:#2b2b1f}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 15px;border-radius:40px;border:1px solid #cbc3b0;font-family:inherit;transition:all .3s ease;font-size:.95rem}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:#c49a6c;box-shadow:0 0 0 3px rgba(196,154,108,0.2)}
+.form-group textarea{border-radius:20px;resize:vertical}
+
+/* списки */
+.multilevel-list{margin:20px 0 0 30px;font-size:1.05rem}
+.multilevel-list>li{margin:12px 0;font-weight:600;color:#2c3e2f}
+.multilevel-list ul{margin-left:25px;margin-top:8px}
+.multilevel-list ul li{font-weight:400;margin:6px 0}
+
+/* ссылки */
+.links-grid{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:20px}
+.link-card{background:#fefcf8;border:1px solid #e8e0ce;border-radius:16px;padding:15px 20px;flex:1 1 280px;transition:all .3s ease}
+.link-card:hover{background:#f5f0e4;transform:translateY(-3px);border-color:#e2b87a}
+.link-card a{text-decoration:none;font-weight:700;color:#2c3e2f;font-size:1.05rem;display:block;margin-bottom:8px}
+.link-card a:hover{color:#c49a6c}
+.link-card p{font-size:.85rem;color:#6b4c2c}
+.link-card .link-type{display:inline-block;background:#e8e0ce;padding:3px 10px;border-radius:20px;font-size:.7rem;margin-top:10px;color:#4a3b28}
+
+/* декор */
+.decor-line{border:none;height:2px;background:linear-gradient(90deg,#c49a6c,#e2b87a,transparent);margin:15px 0 25px}
+.decor-quote{border:3px double #c49a6c;background:linear-gradient(135deg,#fef7e8 0%,#f8eddb 100%);padding:28px;margin:35px 0;border-radius:24px;text-align:center;transition:all .3s ease}
+.decor-quote:hover{background:#fef0e0;border-color:#b4652d}
+.decor-quote p{font-style:italic;font-size:1.2rem;color:#3e3a2e}
+.quote-mini{font-style:italic;background:#e7dfce;padding:12px 20px;border-radius:50px;margin-top:20px;text-align:center;font-family:Georgia,serif;color:#3e3a2e}
+.quote-mini:hover{background:#ddd0b8}
+.graphic-icon{text-align:center;margin:20px 0}
+.description-box{background:linear-gradient(135deg,#fef7e8 0%,#f8eddb 100%);padding:32px 35px;border-radius:32px;border-left:6px solid #b4652d;margin-top:20px;transition:all .3s ease}
+.description-box:hover{background:#fef5e0}
+.description-box h2{font-family:'Merriweather',Georgia,serif;color:#2c3e2f;font-size:1.9rem;margin-bottom:20px;border-bottom:2px dashed #dccfae;display:inline-block;padding-bottom:5px}
+.description-text{font-size:1.08rem;color:#2b2b1f;text-align:justify;line-height:1.65}
+.description-text p{margin-bottom:18px;text-indent:25px}
+.highlight{background:#3b5c2b;color:#fefcf8;padding:0 6px;border-radius:4px}
+
+/* контейнеры */
+.bio-container,.works-container{display:flex;flex-wrap:wrap;padding:40px 50px;gap:40px;max-width:100%}
+.bio-content,.works-content{flex:1;min-width:280px}
+.bio-content h1,.works-content h1{font-family:'Merriweather',Georgia,serif;font-size:2.2rem;color:#3b5c2b;margin-bottom:25px;border-left:5px solid #c49a6c;padding-left:20px}
+.poem-list{margin:15px 0 0 30px}
+.poem-list li{margin:8px 0;font-size:1rem;color:#2c3e2f}
+.poem-list li strong{color:#b4652d}
+.timeline-grid{display:flex;flex-wrap:wrap;gap:20px;margin-top:25px}
+.timeline-card{flex:1;min-width:200px;background:linear-gradient(135deg,#fef7e8 0%,#f8eddb 100%);padding:20px;border-radius:20px;transition:all .3s ease;border:1px solid #ede3cf}
+.timeline-card:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(0,0,0,0.1);background:#fef5e0;border-color:#e2b87a}
+.timeline-card h3{color:#b4652d;font-family:'Merriweather',Georgia,serif;font-size:1.25rem;margin-bottom:12px}
+.timeline-card ul{margin-left:20px;font-size:.95rem;color:#2c3e2f}
+.timeline-card li{margin:8px 0;line-height:1.5}
+
+/* футер */
+.footer{background:#1f2b1c;color:#cfd8c5;padding:30px 50px 25px;border-top:3px solid #b8874a}
+.footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.footer-copy{font-family:Arial,sans-serif;font-size:.9rem}
+.footer-copy p{margin:4px 0}
+.footer-links{display:flex;gap:28px}
+.footer-links a{color:#e2c289;text-decoration:none;font-family:Arial,sans-serif;font-size:.9rem;transition:all .3s ease}
+.footer-links a:hover{color:#ffdd99;text-decoration:underline}
+.footer-meta{font-size:12px;text-align:center;margin-top:20px;padding-top:15px;border-top:1px solid #3f4d37;font-family:'Courier New',monospace}
+.footer-right{text-align:right;font-size:11px;margin-top:5px;font-family:Arial,sans-serif}
+.text-right{text-align:right}
+
+/* цитаты */
+.quote-block{background:linear-gradient(135deg,#e7dfce 0%,#ddd0b8 100%);padding:15px 20px 15px 50px;border-radius:20px;margin-top:15px;font-style:italic;font-family:Georgia,serif;color:#3e3a2e;border-left:4px solid #c49a6c;position:relative}
+.quote-block::before{content:'\201C';font-size:3rem;color:#c49a6c;position:absolute;left:10px;top:-5px;opacity:.4}
+.quote-block::after{content:'\201D';font-size:3rem;color:#c49a6c;position:absolute;right:15px;bottom:-20px;opacity:.4}
+
+/* адаптив */
+@media(max-width:850px){.bio-container,.works-container{flex-direction:column;padding:30px 20px}.sidebar-nav{position:static;width:100%}.footer-inner{flex-direction:column;text-align:center}.footer-right{text-align:center}.banner-text{font-size:1.8rem}.go-top{bottom:20px;right:20px;width:40px;height:40px;font-size:20px}.main-content{padding:35px 25px}.photo-card{flex:0 0 280px;width:280px}.photo-card img{height:280px}}
+@media(max-width:750px){.bio-container,.works-container{padding:25px 20px}.footer{padding:25px 20px}.awards-table th,.awards-table td{padding:6px;font-size:.8rem}.main-content{padding:25px 20px}.banner-text{font-size:1.6rem}.banner-text.banner-large{font-size:1.8rem}.page-title{font-size:1.6rem}.footer-inner{flex-direction:column;text-align:center}.footer-right{text-align:center}.feedback-form{padding:20px}.timeline-grid{flex-direction:column}.tvardovsky-photo img{width:100%;max-width:280px}.photo-card{flex:0 0 100%;width:100%;max-width:350px}.photo-card img{height:auto;max-height:280px}}
+@media(max-width:480px){.site-title{font-size:1.5rem}.nav-menu a{padding:6px 12px;font-size:.85rem}.content-card{padding:15px 18px}.content-card h2{font-size:1.2rem}}
+/* ===== СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ (index.html) ===== */
+.page-index .hero-banner {
+    padding: 55px 20px;
+}
+
+.page-index .banner-text {
+    font-size: 2.8rem;
+}
+
+/* ===== СТИЛИ ДЛЯ СТРАНИЦЫ works.html ===== */
+.works-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 50px;
+    gap: 40px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.works-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.works-content h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.2rem;
+    color: #3b5c2b;
+    margin-bottom: 25px;
+    border-left: 5px solid #c49a6c;
+    padding-left: 20px;
+}
+
+.poem-list {
+    margin: 15px 0 0 30px;
+}
+
+.poem-list li {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #2c3e2f;
+}
+
+.poem-list li strong {
+    color: #b4652d;
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ МЕДИА-ЗАПРОСЫ ===== */
+@media (max-width: 850px) {
+    .works-container {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    .sidebar-nav {
+        position: static;
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    .works-container {
+        padding: 25px 20px;
+    }
+}
+
+/* ===== СТИЛЬ ДЛЯ vasily_terkin.html ===== */
+.info-block .quote-block {
+    border-left-color: #b4652d;
+}
+
+/* ===== СТИЛЬ ДЛЯ New-world.html ===== */
+.video-wrapper {
+    margin: 30px auto 15px;
+    max-width: 800px;
+}
+/* ===== НОВЫЕ ТЕГИ ДЛЯ vasily_terkin.html ===== */
+mark {
+    background: #f9f0c1;
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+ins {
+    text-decoration: underline;
+    color: #2c6b2c;
+    background: #e8f5e8;
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+del {
+    text-decoration: line-through;
+    color: #a94442;
+    background: #fce4e4;
+    padding: 0 4px;
+    border-radius: 3px;
+    opacity: 0.7;
+}
