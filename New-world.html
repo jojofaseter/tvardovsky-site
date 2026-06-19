@@ -5,361 +5,7 @@
     <link rel="icon" type="image/webp" href="img/i.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Журнал «Новый мир» - А.Т. Твардовский</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: #f2efe4;
-            line-height: 1.5;
-            width: 100%;
-            min-height: 100vh;
-            font-size: 16px;
-        }
-
-        .site-wrapper {
-            width: 100%;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-            background: #fffef7;
-        }
-
-        .site-header {
-            background: #2c3e2f;
-            padding: 28px 20px;
-            text-align: center;
-            border-bottom: 4px solid #c49a6c;
-            width: 100%;
-        }
-
-        .site-title {
-            font-family: 'Merriweather', 'Georgia', serif;
-            font-size: 2.2rem;
-            letter-spacing: 1px;
-            color: #fef3da;
-            text-shadow: 2px 2px 0 #1f2f1f;
-            font-weight: 700;
-        }
-
-        .site-title span {
-            color: #e2b87a;
-        }
-
-        .site-sub {
-            font-size: 0.85rem;
-            font-family: 'Inter', sans-serif;
-            color: #d4c29e;
-            margin-top: 6px;
-        }
-
-        .nav-menu {
-            background: #1e2a22;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            padding: 12px 20px;
-            border-bottom: 1px solid #c49a6c;
-            width: 100%;
-        }
-
-        .nav-menu a {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            color: #f2e3c9;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 8px 22px;
-            border-radius: 40px;
-            transition: all 0.25s;
-            font-size: 1rem;
-            background: rgba(255,245,215,0.08);
-        }
-
-        .nav-menu a:hover {
-            background: #c49a6c;
-            color: #1e2a22;
-            transform: translateY(-2px);
-        }
-
-        .hero-banner {
-            background: linear-gradient(135deg, #3b5c2b, #5a3e1b);
-            padding: 45px 20px;
-            text-align: center;
-            border-bottom: 3px solid #e2b87a;
-            width: 100%;
-        }
-
-        .banner-text {
-            font-family: 'Merriweather', serif;
-            font-size: 2.3rem;
-            font-weight: bold;
-            color: #fff6e0;
-        }
-
-        .banner-sub {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            color: #f9e0a0;
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        .main-content {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 45px 50px;
-        }
-
-        .page-title {
-            font-family: 'Merriweather', serif;
-            font-size: 2rem;
-            color: #3b5c2b;
-            text-align: center;
-            margin-bottom: 35px;
-            border-bottom: 2px solid #c49a6c;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .title-center {
-            text-align: center;
-        }
-
-        .info-block {
-            margin-bottom: 35px;
-        }
-
-        .info-block h2 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.6rem;
-            color: #b4652d;
-            margin-bottom: 15px;
-        }
-
-        .info-block h3 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.25rem;
-            color: #b4652d;
-            margin: 20px 0 10px;
-        }
-
-        .info-block p {
-            font-size: 1rem;
-            color: #2b2b1f;
-            text-align: justify;
-            line-height: 1.6;
-            margin-bottom: 12px;
-            text-indent: 1.8em;
-        }
-
-        .info-block .quote {
-            font-style: italic;
-            margin: 15px 0;
-            padding-left: 20px;
-            color: #6b4c2c;
-            border-left: 3px solid #c49a6c;
-        }
-
-        .photo-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            margin: 35px 0;
-        }
-
-        .photo-card {
-            flex: 0 0 320px;
-            width: 320px;
-            text-align: center;
-            background: #fefcf8;
-            border-radius: 16px;
-            padding: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border: 1px solid #ede3cf;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: 320px;
-            object-fit: contain;
-            border-radius: 12px;
-            display: block;
-            background: #f2efe4;
-            transition: transform 0.2s;
-        }
-
-        .photo-card:hover img {
-            transform: scale(1.02);
-        }
-
-        .photo-card p {
-            margin-top: 12px;
-            font-size: 0.85rem;
-            color: #6b4c2c;
-            flex-shrink: 0;
-            transition: color 0.2s;
-        }
-
-        .photo-card:hover p {
-            color: #b4652d;
-        }
-
-        .video-caption {
-            text-align: center;
-            margin-top: 12px;
-            margin-bottom: 20px;
-            font-size: 0.85rem;
-            color: #6b4c2c;
-            font-style: italic;
-        }
-
-        /* ===== КНОПКА "НАВЕРХ" ===== */
-        .go-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: #c49a6c;
-            color: #1e2a22;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .go-top:hover {
-            background: #e2b87a;
-            transform: translateY(-5px);
-            opacity: 1;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-        }
-
-        .go-top.visible {
-            opacity: 0.8;
-            visibility: visible;
-        }
-
-        .footer {
-            background: #1f2b1c;
-            color: #cfd8c5;
-            padding: 30px 50px 25px;
-            border-top: 3px solid #b8874a;
-            width: 100%;
-        }
-
-        .footer-inner {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .footer-copy {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-        }
-
-        .footer-copy p {
-            margin: 4px 0;
-        }
-
-        .to-main-btn {
-            background: #c49a6c;
-            color: #1e2a22;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 28px;
-            border-radius: 40px;
-            transition: 0.2s;
-        }
-
-        .to-main-btn:hover {
-            background: #e2b87a;
-        }
-
-        .footer-meta {
-            font-size: 12px;
-            text-align: center;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #3f4d37;
-            font-family: 'Fira Code', 'Roboto Mono', monospace;
-        }
-
-        .footer-right {
-            text-align: right;
-            font-size: 11px;
-            margin-top: 5px;
-            font-family: 'Inter', sans-serif;
-        }
-
-        @media (max-width: 850px) {
-            .main-content {
-                padding: 35px 25px;
-            }
-            .photo-card {
-                flex: 0 0 280px;
-                width: 280px;
-            }
-            .photo-card img {
-                height: 280px;
-            }
-        }
-
-        @media (max-width: 750px) {
-            .main-content {
-                padding: 25px 20px;
-            }
-            .banner-text {
-                font-size: 1.6rem;
-            }
-            .page-title {
-                font-size: 1.6rem;
-            }
-            .footer {
-                padding: 25px 20px;
-            }
-            .footer-inner {
-                flex-direction: column;
-                text-align: center;
-            }
-            .footer-right {
-                text-align: center;
-            }
-            .photo-card {
-                flex: 0 0 100%;
-                width: 100%;
-                max-width: 350px;
-            }
-            .photo-card img {
-                height: auto;
-                max-height: 280px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="CSS.css">
 </head>
 <body>
 <div class="site-wrapper">
@@ -387,54 +33,83 @@
             <h1 class="page-title">«Новый мир» под руководством Твардовского</h1>
         </div>
 
-        <div class="info-block">
-            <h2>📜 «Новый мир» как явление</h2>
-            <p>Литературно-художественный журнал <strong>«Новый мир»</strong> основан в 1925 году. Однако подлинный расцвет издания связан с именем Александра Трифоновича Твардовского, который дважды занимал пост главного редактора: с <strong>1950 по 1954 год</strong> и с <strong>1958 по 1970 год</strong>. Именно второй период (1958–1970) вошёл в историю как <strong>«золотой век» «Нового мира»</strong> и как целая эпоха в истории русской литературы.</p>
-            <p>При Твардовском журнал стал не просто литературным изданием, а <strong>центром общественно-политической жизни страны</strong>, главной трибуной «шестидесятников». Здесь печаталась честная, правдивая литература, которую не решались публиковать другие журналы. По словам исследователей, «Новый мир» Твардовского был «самым последовательным проводником политики десталинизации» в литературе и оставался оппозиционным власти даже в годы брежневского «застоя».</p>
-            <p>Твардовский собрал вокруг себя команду единомышленников — критиков и редакторов, которые разделяли его взгляды: <strong>Анатолий Кондратович, Владимир Лакшин, Илья Сац, Борис Закс</strong>. Вместе они превратили «Новый мир» в явление, которое современники называли <strong>«островом свободы»</strong> в советском литературном море.</p>
-            <div class="quote">
+        <!--  БЛОК 1  -->
+        <div class="content-card">
+            <h2>«Новый мир» как явление</h2>
+            <p>Литературно-художественный журнал <strong>«Новый мир»</strong> основан в <strong>1925 году</strong>. Однако подлинный расцвет издания связан с именем <span class="highlight">Александра Трифоновича Твардовского</span>, который дважды занимал пост главного редактора: с <strong>1950 по 1954 год</strong> и с <strong>1958 по 1970 год</strong>. Именно второй период (1958–1970) вошёл в историю как <mark>«золотой век» «Нового мира»</mark> и как целая эпоха в истории русской литературы.</p>
+            <p>При Твардовском журнал стал не просто литературным изданием, а <span class="highlight">центром общественно-политической жизни страны</span>, главной трибуной <q>шестидесятников</q>. Здесь печаталась честная, правдивая литература, которую не решались публиковать другие журналы. <ins>По словам исследователей, «Новый мир» Твардовского был «самым последовательным проводником политики десталинизации» в литературе</ins> и оставался оппозиционным власти даже в годы брежневского <q>застоя</q>.</p>
+            <p>Твардовский собрал вокруг себя команду единомышленников — критиков и редакторов, которые разделяли его взгляды: <strong>Анатолий Кондратович</strong>, <strong>Владимир Лакшин</strong>, <strong>Илья Сац</strong>, <strong>Борис Закс</strong>. Вместе они превратили «Новый мир» в явление, которое современники называли <strong>«островом свободы»</strong> в советском литературном море. <u>Это сравнение стало символическим для целого поколения читателей и писателей</u>.</p>
+            <div class="quote-block">
                 «Журнал должен быть не просто сборником произведений, а живым организмом, выражающим время и душу народа.» — из редакционных заметок А.Т. Твардовского
             </div>
         </div>
 
-        <div class="info-block">
-            <h2>📚 Главные публикации эпохи</h2>
-            
+        <!--  БЛОК 2  -->
+        <div class="content-card">
+            <h2>Главные публикации эпохи</h2>
+
             <h3>Александр Солженицын</h3>
-            <p>В <strong>ноябре 1962 года</strong> в «Новом мире» была опубликована повесть <strong>«Один день Ивана Денисовича»</strong>. Это было первое художественное произведение о сталинских лагерях, вышедшее в СССР. Твардовский лично добивался разрешения на публикацию у <strong>Никиты Хрущёва</strong>, понимая историческое значение этого текста. Публикация стала сенсацией не только в СССР, но и во всём мире. Позже журнал напечатал рассказы Солженицына <strong>«Матрёнин двор»</strong> и <strong>«Случай на станции Кочетовка»</strong>. Однако роман «В круге первом» и «Раковый корпус» напечатать не удалось — цензура запретила.</p>
-            
+            <p>В <strong>ноябре 1962 года</strong> в «Новом мире» была опубликована повесть <span class="highlight">«Один день Ивана Денисовича»</span>. Это было <mark>первое художественное произведение о сталинских лагерях</mark>, вышедшее в СССР. Твардовский лично добивался разрешения на публикацию у <strong>Никиты Хрущёва</strong>, понимая историческое значение этого текста. <ins>Публикация стала сенсацией не только в СССР, но и во всём мире</ins>. Позже журнал напечатал рассказы Солженицына <strong>«Матрёнин двор»</strong> и <strong>«Случай на станции Кочетовка»</strong>. <u>Однако роман «В круге первом» и «Раковый корпус» напечатать не удалось — цензура запретила</u>.</p>
+
             <h3>Василий Гроссман</h3>
-            <p>Роман-эпопея <strong>«Жизнь и судьба»</strong> был передан в редакцию в 1961 году. Твардовский назвал его <strong>«военным "Войной и миром"»</strong> и отстаивал до последнего. Но в 1961 году рукопись была арестована КГБ, и публикация не состоялась. Твардовский тяжело переживал эту потерю. Роман увидел свет только в 1980-е годы за рубежом, а в СССР — в конце 1980-х.</p>
-            
+            <p>Роман-эпопея <span class="highlight">«Жизнь и судьба»</span> был передан в редакцию в <strong>1961 году</strong>. Твардовский назвал его <q>военным "Войной и миром"</q> и отстаивал до последнего. <mark>Но в 1961 году рукопись была арестована КГБ, и публикация не состоялась</mark>. Твардовский тяжело переживал эту потерю. <ins>Роман увидел свет только в 1980-е годы за рубежом, а в СССР — в конце 1980-х</ins>.</p>
+
             <h3>Поэты-«шестидесятники»</h3>
-            <p><strong>Андрей Вознесенский, Белла Ахмадулина, Евгений Евтушенко, Роберт Рождественский, Борис Слуцкий, Давид Самойлов</strong> — именно «Новый мир» открыл их для широкой аудитории. Твардовский печатал их стихи, несмотря на нападки консервативной критики, которая обвиняла «шестидесятников» в «формализме» и «нигилизме».</p>
-            
+            <p><strong>Андрей Вознесенский</strong>, <strong>Белла Ахмадулина</strong>, <strong>Евгений Евтушенко</strong>, <strong>Роберт Рождественский</strong>, <strong>Борис Слуцкий</strong>, <strong>Давид Самойлов</strong> — именно «Новый мир» открыл их для широкой аудитории. Твардовский печатал их стихи, несмотря на нападки консервативной критики, которая обвиняла <q>шестидесятников</q> в <q>формализме</q> и <q>нигилизме</q>. <mark>Эти поэты стали голосом целого поколения</mark>.</p>
+
+            <ul style="margin: 10px 0 10px 30px; font-size: 1rem; color: #2b2b1f; line-height: 1.6;">
+                <li><strong>Андрей Вознесенский</strong> — <em>«Мне 14 лет»</em>, <em>«Гойя»</em></li>
+                <li><strong>Белла Ахмадулина</strong> — <em>«По улице моей который год»</em></li>
+                <li><strong>Евгений Евтушенко</strong> — <em>«Бабий Яр»</em>, <em>«Наследники Сталина»</em></li>
+                <li><strong>Роберт Рождественский</strong> — <em>«Реквием»</em></li>
+                <li><strong>Борис Слуцкий</strong> — <em>«Лошади в океане»</em></li>
+                <li><strong>Давид Самойлов</strong> — <em>«Сороковые, роковые»</em></li>
+            </ul>
+
             <h3>Прозаики нового поколения</h3>
-            <p><strong>Василий Шукшин</strong> — рассказы «Чудик», «Срезал», «Микроскоп» — Твардовский разглядел в сибирском актёре и режиссёре огромный литературный талант. <strong>Юрий Трифонов</strong> — повесть «Обмен», открывшая цикл «московских повестей» о советской интеллигенции. <strong>Фазиль Искандер</strong>, <strong>Владимир Войнович</strong>, <strong>Григорий Бакланов</strong> (повесть «Навеки — девятнадцатилетние») — все они начинали свой путь в литературе в «Новом мире».</p>
-            
+            <p><strong>Василий Шукшин</strong> — рассказы <em>«Чудик»</em>, <em>«Срезал»</em>, <em>«Микроскоп»</em> — Твардовский разглядел в сибирском актёре и режиссёре <span class="highlight">огромный литературный талант</span>. <strong>Юрий Трифонов</strong> — повесть <em>«Обмен»</em>, открывшая цикл <q>московских повестей</q> о советской интеллигенции. <strong>Фазиль Искандер</strong>, <strong>Владимир Войнович</strong>, <strong>Григорий Бакланов</strong> (повесть <em>«Навеки — девятнадцатилетние»</em>) — все они начинали свой путь в литературе в «Новом мире». <ins>Многие из этих авторов стали классиками ещё при жизни</ins>.</p>
+
+            <ul style="margin: 10px 0 10px 30px; font-size: 1rem; color: #2b2b1f; line-height: 1.6;">
+                <li><strong>Василий Шукшин</strong> — <em>«Чудик»</em>, <em>«Срезал»</em>, <em>«Микроскоп»</em></li>
+                <li><strong>Юрий Трифонов</strong> — <em>«Обмен»</em>, <em>«Другая жизнь»</em></li>
+                <li><strong>Фазиль Искандер</strong> — <em>«Сандро из Чегема»</em></li>
+                <li><strong>Владимир Войнович</strong> — <em>«Мы лучше всех»</em></li>
+                <li><strong>Григорий Бакланов</strong> — <em>«Навеки — девятнадцатилетние»</em></li>
+            </ul>
+
             <h3>Возвращённые имена</h3>
-            <p>Твардовский печатал стихи <strong>Бориса Пастернака</strong> (из романа «Доктор Живаго»), <strong>Анны Ахматовой</strong> («Поэма без героя»), <strong>Марины Цветаевой</strong> (посмертно), <strong>Николая Заболоцкого</strong>. Он вернул в литературу имена, которые долгие годы находились в тени официальной критики.</p>
-            
-            <div class="quote">
+            <p>Твардовский печатал стихи <strong>Бориса Пастернака</strong> (из романа <em>«Доктор Живаго»</em>), <strong>Анны Ахматовой</strong> (<em>«Поэма без героя»</em>), <strong>Марины Цветаевой</strong> (посмертно), <strong>Николая Заболоцкого</strong>. <mark>Он вернул в литературу имена, которые долгие годы находились в тени официальной критики</mark>. <ins>Это был акт гражданского мужества, за который Твардовского не раз критиковали сверху</ins>.</p>
+
+            <ul style="margin: 10px 0 10px 30px; font-size: 1rem; color: #2b2b1f; line-height: 1.6;">
+                <li><strong>Борис Пастернак</strong> — стихи из романа <em>«Доктор Живаго»</em></li>
+                <li><strong>Анна Ахматова</strong> — <em>«Поэма без героя»</em></li>
+                <li><strong>Марина Цветаева</strong> — посмертные публикации</li>
+                <li><strong>Николай Заболоцкий</strong> — поздняя лирика</li>
+            </ul>
+
+            <div class="quote-block">
                 «Печатая Солженицына, мы делаем не литературное, а государственное дело. Возвращаем стране правду о ней самой.» — из выступления А.Т. Твардовского на заседании редколлегии
             </div>
         </div>
 
-        <div class="info-block">
-            <h2>⚔️ Борьба с цензурой и травля журнала</h2>
-            <p>Твардовский вёл <strong>непримиримую борьбу с партийной бюрократией и цензурой</strong>. Он отказывался печатать «идеологически выдержанные» конъюнктурные произведения, отстаивал каждую публикацию, вступал в конфликты с членами редколлегии и лично с секретарём Союза писателей <strong>Александром Фадеевым</strong>, а позже — с партийными идеологами <strong>Михаилом Сусловым</strong> и <strong>Дмитрием Полянским</strong>.</p>
-            <p>После смещения Хрущёва в 1964 году и наступления брежневской «эпохи застоя» давление на журнал усилилось. В 1969–1970 годах в партийной печати (в частности, в журнале «Октябрь», который возглавлял консерватор <strong>Всеволод Кочетов</strong>) развернулась <strong>травля «Нового мира»</strong>. Твардовского обвиняли в «идейной невыдержанности», «публикации клеветнических произведений», «нигилистическом отношении к советской литературе».</p>
-            <p>В <strong>феврале 1970 года</strong> Твардовский был вынужден покинуть пост главного редактора. Вместе с ним ушла вся его команда: А. Кондратович, В. Лакшин, И. Сац, Б. Закс и другие. Это стало <strong>концом целой эпохи</strong> в истории русской литературы и журналистики. «Новый мир» превратился в рядовое советское издание.</p>
+        <!--  БЛОК 3  -->
+        <div class="content-card">
+            <h2>Борьба с цензурой и травля журнала</h2>
+            <p>Твардовский вёл <span class="highlight">непримиримую борьбу с партийной бюрократией и цензурой</span>. Он отказывался печатать <q>идеологически выдержанные</q> конъюнктурные произведения, отстаивал каждую публикацию, вступал в конфликты с членами редколлегии и лично с секретарём Союза писателей <strong>Александром Фадеевым</strong>, а позже — с партийными идеологами <strong>Михаилом Сусловым</strong> и <strong>Дмитрием Полянским</strong>. <mark>Это были не просто литературные споры, а принципиальная борьба за правду в литературе</mark>.</p>
+            <p>После смещения Хрущёва в <strong>1964 году</strong> и наступления брежневской <q>эпохи застоя</q> давление на журнал усилилось. В 1969–1970 годах в партийной печати (в частности, в журнале <q>Октябрь</q>, который возглавлял консерватор <strong>Всеволод Кочетов</strong>) развернулась <span class="highlight">травля «Нового мира»</span>. Твардовского обвиняли в <q>идейной невыдержанности</q>, <q>публикации клеветнических произведений</q>, <q>нигилистическом отношении к советской литературе</q>. <ins>Эти обвинения были абсурдны, но они имели реальные последствия</ins>.</p>
+            <p>В <strong>феврале 1970 года</strong> Твардовский был вынужден покинуть пост главного редактора. Вместе с ним ушла вся его команда: А. Кондратович, В. Лакшин, И. Сац, Б. Закс и другие. <mark>Это стало концом целой эпохи в истории русской литературы и журналистики</mark>. <u>«Новый мир» превратился в рядовое советское издание, потеряв своё уникальное лицо</u>.</p>
         </div>
 
-        <div class="info-block">
-            <h2>🌟 Значение в истории литературы</h2>
-            <p>«Новый мир» времён Твардовского — это <strong>голос поколения «шестидесятников»</strong>, трибуна для писателей, говоривших правду о сталинизме, о войне, о советской действительности. Журнал формировал мировоззрение целой интеллигентской прослойки, которая в 1980-е годы сыграла существенную роль в перестройке и обновлении страны.</p>
-            <p>Современники называли «Новый мир» <strong>«главной книгой эпохи»</strong>. Именно здесь впервые были напечатаны произведения, которые позже составили золотой фонд русской литературы XX века. Без «Нового мира» Твардовского не было бы ни «оттепели» в литературе, ни того мощного общественного резонанса, который привёл к переосмыслению сталинизма.</p>
-            <p>История «Нового мира» и его главного редактора — это <strong>история мужества и принципиальности</strong> в литературе. Твардовский заплатил за свои убеждения должностью, здоровьем, но не отказался от них. Как писал в своих дневниках сам поэт: <strong>«Назначение художника — служить правде. А правда всегда сложнее любой схемы. Потому и искусство — вечное искание, вечное горение»</strong>.</p>
+        <!--  БЛОК 4  -->
+        <div class="content-card">
+            <h2>Значение в истории литературы</h2>
+            <p><q>Новый мир</q> времён Твардовского — это <span class="highlight">голос поколения «шестидесятников»</span>, трибуна для писателей, говоривших правду о сталинизме, о войне, о советской действительности. <ins>Журнал формировал мировоззрение целой интеллигентской прослойки</ins>, которая в 1980-е годы сыграла существенную роль в перестройке и обновлении страны.</p>
+            <p>Современники называли «Новый мир» <strong>«главной книгой эпохи»</strong>. Именно здесь впервые были напечатаны произведения, которые позже составили <span class="highlight">золотой фонд русской литературы XX века</span>. <mark>Без «Нового мира» Твардовского не было бы ни «оттепели» в литературе, ни того мощного общественного резонанса, который привёл к переосмыслению сталинизма</mark>.</p>
+            <p>История «Нового мира» и его главного редактора — это <span class="highlight">история мужества и принципиальности</span> в литературе. Твардовский заплатил за свои убеждения должностью, здоровьем, но не отказался от них. <ins>Как писал в своих дневниках сам поэт: <strong>«Назначение художника — служить правде. А правда всегда сложнее любой схемы. Потому и искусство — вечное искание, вечное горение»</strong></ins>.</p>
         </div>
 
-        <div style="margin: 30px 0 15px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <!--  ВИДЕО  -->
+        <div class="video-wrapper">
             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); background: #000;">
                 <iframe 
                     src="https://vk.com/video_ext.php?oid=-245320&id=456239192&hd=2" 
@@ -449,14 +124,15 @@
             🎥 «Новый мир». Александр Трифонович Твардовский — Видео от Библиотека «Семья и книга»
         </div>
 
+        <!--  ФОТОГАЛЕРЕЯ -->
         <div class="photo-gallery">
             <div class="photo-card">
                 <img src="img/1012569289.jpg" alt="Обложка журнала Новый мир">
-                <p>📖 Обложка журнала «Новый мир», 1960-е годы</p>
+                <p>📖 Обложка журнала <q>Новый мир</q>, <strong>1960-е годы</strong></p>
             </div>
             <div class="photo-card">
                 <img src="img/resize.webp" alt="Твардовский за работой">
-                <p>✍️ Александр Твардовский в редакции журнала, 1960-е годы</p>
+                <p>✍️ Александр Твардовский в редакции журнала, <strong>1960-е годы</strong></p>
             </div>
         </div>
     </div>
@@ -470,35 +146,13 @@
                 <p>Студент гр. 1ПИб-02-3оп-25 | Воробьев Т.Д.</p>
                 <p>Череповецкий государственный университет</p>
             </div>
-            <a href="index.html" class="to-main-btn">🏠 На главную</a>
+            <a href="index.html" class="to-main-btn">На главную</a>
         </div>
-        <div class="footer-meta">
-            Web-программирование | ИИТ ЧГУ | 2026
-        </div>
-        <div class="footer-right">
-            © 2026 Все права защищены
-        </div>
+        <div class="footer-meta">Web-программирование | Кафедра МПО ЭВМ | ИИТ ЧГУ | 2026</div>
+        <div class="footer-right">© 2026 Все права защищены</div>
     </div>
 </div>
 
-<script>
-    const goTopBtn = document.getElementById('goTopBtn');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            goTopBtn.classList.add('visible');
-        } else {
-            goTopBtn.classList.remove('visible');
-        }
-    });
-    
-    goTopBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-</script>
+<script src="function.js"></script>
 </body>
 </html>
