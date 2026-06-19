@@ -5,10 +5,67 @@
     <link rel="icon" type="image/webp" href="img/i.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>А.Т. Твардовский | Главная</title>
-
     <link rel="stylesheet" href="CSS.css">
-
-  
+    <style>
+    html,body.page-index{height:100%;overflow:hidden;margin:0;padding:0}
+    .page-index .site-wrapper{display:flex;flex-direction:column;height:100vh;overflow:hidden}
+    .page-index .site-header,.page-index .nav-menu,.page-index .hero-banner,.page-index .footer{flex-shrink:0}
+    .page-index .site-header{padding:28px 20px;background:linear-gradient(165deg,#1f2f1f,#2c3e2f 40%,#3a4d3a);border-bottom:4px solid #c49a6c;text-align:center}
+    .page-index .site-title{font-size:2.2rem;color:#fef3da;font-weight:700}
+    .page-index .site-title span{color:#e2b87a}
+    .page-index .site-sub{font-size:.85rem;color:#d4c29e;letter-spacing:2px;text-transform:uppercase}
+    .page-index .nav-menu{background:#1e2a22;display:flex;justify-content:center;gap:8px;padding:12px 20px;flex-wrap:wrap}
+    .page-index .nav-menu a{color:#f2e3c9;text-decoration:none;font-weight:600;padding:8px 22px;border-radius:40px}
+    .page-index .nav-menu a:hover{background:#c49a6c;color:#1e2a22}
+    .page-index .hero-banner{background:linear-gradient(165deg,#3b5c2b,#4a6a35 40%,#5a3e1b);padding:20px;text-align:center}
+    .page-index .hero-banner .banner-text{font-size:2.2rem;font-weight:800;color:#fff6e0}
+    .page-index .hero-banner .banner-sub{font-size:1rem;color:#f9e0a0;font-style:italic}
+    .page-index .main-content{flex:1;display:flex;align-items:center;justify-content:center;gap:30px;padding:10px 40px;overflow:hidden}
+    .page-index .photo-section{flex-shrink:0;text-align:center}
+    .page-index .tvardovsky-photo{border-radius:28px;overflow:hidden;border:4px solid #e2b87a;display:inline-block}
+    .page-index .tvardovsky-photo img{width:200px;display:block}
+    .page-index .photo-caption{margin-top:6px;color:#6b4c2c;font-size:.75rem;font-style:italic}
+    .page-index .graphic-icon{flex-shrink:0}
+    .page-index .description-box{flex:1;background:linear-gradient(135deg,#fef7e8,#f8eddb);padding:18px 24px;border-radius:32px;border-left:6px solid #b4652d;overflow:hidden}
+    .page-index .description-box h2{color:#2c3e2f;font-size:1.4rem;border-bottom:2px dashed #dccfae;display:inline-block}
+    .page-index .description-text{font-size:.92rem;color:#2b2b1f;text-align:justify}
+    .page-index .description-text p{margin-bottom:8px;text-indent:20px}
+    .page-index .highlight{background:#3b5c2b;color:#fefcf8;padding:0 6px;border-radius:4px}
+    .page-index .footer{background:#1f2b1c;color:#cfd8c5;padding:12px 40px 10px;border-top:3px solid #b8874a}
+    .page-index .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+    .page-index .footer-copy{font-size:.75rem}
+    .page-index .footer-copy p{margin:2px 0}
+    .page-index .footer-links{display:flex;gap:20px}
+    .page-index .footer-links a{color:#e2c289;text-decoration:none;font-size:.8rem}
+    .page-index .footer-meta{font-size:.6rem;text-align:center;margin-top:6px;padding-top:8px;border-top:1px solid #3f4d37}
+    .page-index .footer-right{text-align:right;font-size:.6rem}
+    .page-index .go-top{display:none!important}
+    @media(max-width:900px){.page-index .main-content{flex-direction:column;padding:8px 20px;gap:12px}
+    .page-index .tvardovsky-photo img{width:140px}
+    .page-index .description-box{padding:12px 16px}
+    .page-index .description-box h2{font-size:1.1rem}
+    .page-index .description-text{font-size:.8rem}
+    .page-index .hero-banner .banner-text{font-size:1.6rem}
+    .page-index .site-title{font-size:1.6rem}
+    .page-index .graphic-icon{display:none}}
+    @media(max-width:480px){.page-index .main-content{padding:5px 10px;gap:8px}
+    .page-index .tvardovsky-photo img{width:100px}
+    .page-index .description-box{padding:8px 10px}
+    .page-index .description-box h2{font-size:.9rem}
+    .page-index .description-text{font-size:.65rem}
+    .page-index .hero-banner{padding:10px}
+    .page-index .hero-banner .banner-text{font-size:1.2rem}
+    .page-index .hero-banner .banner-sub{font-size:.65rem}
+    .page-index .site-header{padding:12px 10px}
+    .page-index .site-title{font-size:1.2rem}
+    .page-index .site-sub{font-size:.55rem}
+    .page-index .nav-menu{padding:6px 8px;gap:4px}
+    .page-index .nav-menu a{padding:4px 8px;font-size:.55rem}
+    .page-index .footer{padding:5px 8px 4px}
+    .page-index .footer-copy{font-size:.5rem}
+    .page-index .footer-links a{font-size:.5rem}
+    .page-index .graphic-icon{display:none}}
+    </style>
 </head>
 <body class="page-index">
 <div class="site-wrapper">
@@ -16,7 +73,6 @@
         <div class="site-title">Александр Трифонович <span>Твардовский</span></div>
         <div class="site-sub">жизнь, творчество, наследие</div>
     </div>
-
     <div class="nav-menu">
         <a href="index.html">Главная</a>
         <a href="bio.html">Биография</a>
@@ -25,103 +81,26 @@
         <a href="New-world.html">Журнал «Новый мир»</a>
         <a href="links.html">Список доп. информации</a>
     </div>
-
     <div class="hero-banner">
         <div class="banner-text">Поэт. Воин. Гражданин.</div>
         <div class="banner-sub">«Я жил, я был — за всё на свете я отвечаю головой»</div>
     </div>
-
     <div class="main-content">
         <div class="photo-section">
-            <div class="tvardovsky-photo">
-                <img src="img/tvardovsky.jpg" alt="Александр Трифонович Твардовский">
-            </div>
+            <div class="tvardovsky-photo"><img src="img/tvardovsky.jpg" alt="Александр Трифонович Твардовский"></div>
             <div class="photo-caption">А.Т. Твардовский, <strong>1941 год</strong> | Фронтовой корреспондент</div>
         </div>
-
-        <!-- 4.2.9 ГРАФИЧЕСКИЙ ОБЪЕКТ №4: SVG-иконка (звезда/перо) -->
         <div class="graphic-icon">
-            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L15 8.5L22 9.5L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9.5L9 8.5L12 2Z" fill="#c49a6c" stroke="#c49a6c" stroke-width="1"/>
-            </svg>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8.5L22 9.5L17 14L18.5 21L12 17.5L5.5 21L7 14L2 9.5L9 8.5L12 2Z" fill="#c49a6c" stroke="#c49a6c" stroke-width="1"/></svg>
         </div>
-
         <div class="description-box">
             <h2>О проекте</h2>
             <div class="description-text">
-                <p><span class="highlight">Web-сайт, посвящённый А. Т. Твардовскому</span> — это информационно-образовательный ресурс, объединяющий ключевые факты биографии, анализ творческого пути и материалы о культурном наследии выдающегося <strong>русского советского поэта, прозаика и журналиста</strong> (<strong>1910–1971</strong>).</p>
-                <p>Александр Трифонович Твардовский — <span class="highlight">явление уникальное в русской литературе XX века</span>. Поэт, чьё творчество стало <q>летописью эпохи</q>, редактор, превративший журнал <q>Новый мир</q> в главный оппозиционный голос страны, военный корреспондент, прошедший две войны и создавший <q>Книгу про бойца</q>, которую читали в окопах. <ins>Высокую оценку его творчеству давали Иван Бунин, Борис Пастернак, Анна Ахматова</ins>.</p>
-                <p>Сайт ориентирован на <span class="highlight">студентов, школьников, преподавателей</span> и всех, кто интересуется русской литературой XX века. Здесь вы найдёте полную хронику жизни, подробный обзор главных произведений, историю создания легендарной поэмы <q>Василий Тёркин</q>, а также сведения о редакторской деятельности Твардовского в журнале <q>Новый мир</q>, ставшем <mark>рупором оттепели</mark>.</p>
-                <div class="quote-mini">«Вся суть — в одном-единственном завете: то, что скажу, до времени тая, я это знаю лучше всех на свете — живых и мёртвых, — знаю только я.» — А.Т. Твардовский</div>
-                <p style="margin-top: 15px;">Навигация интуитивно понятна, а <strong>адаптивный дизайн</strong> делает просмотр комфортным с любых устройств.</p>
+                <p><span class="highlight">Web-сайт, посвящённый А. Т. Твардовскому</span> — информационно-образовательный ресурс, объединяющий ключевые факты биографии, анализ творческого пути и материалы о культурном наследии выдающегося <strong>русского советского поэта, прозаика и журналиста</strong> (<strong>1910–1971</strong>).</p>
+                <p>Сайт ориентирован на <span class="highlight">студентов, школьников, преподавателей</span> и всех, кто интересуется русской литературой XX века. Здесь вы найдёте хронику жизни, обзор главных произведений, историю создания поэмы <q>Василий Тёркин</q>, а также сведения о редакторской деятельности Твардовского в журнале <q>Новый мир</q>, ставшем <mark>рупором оттепели</mark>.</p>
             </div>
-        </div>
-
-        <div style="margin: 45px 0 30px;">
-            <h2 style="font-family: 'Merriweather', serif; color: #2c3e2f; border-left: 5px solid #c49a6c; padding-left: 20px;"> Ключевые вехи жизни и творчества</h2>
-            <div class="timeline-grid">
-                <div class="timeline-card">
-                    <h3>1910–1930-е</h3>
-                    <ul>
-                        <li><strong>1910</strong> — Рождение на хуторе Загорье</li>
-                        <li><strong>1925</strong> — Первая публикация</li>
-                        <li><strong>1936</strong> — Поэма <q>Страна Муравия</q></li>
-                        <li><strong>1939–1940</strong> — Участие в финской войне</li>
-                    </ul>
-                </div>
-                <div class="timeline-card">
-                    <h3>1941–1945</h3>
-                    <ul>
-                        <li><strong>1941–1945</strong> — Военный корреспондент</li>
-                        <li><strong>1942–1945</strong> — <q>Василий Тёркин</q></li>
-                        <li><strong>1945</strong> — <q>Дом у дороги</q></li>
-                        <li><strong>1946</strong> — Сталинская премия</li>
-                    </ul>
-                </div>
-                <div class="timeline-card">
-                    <h3>1950–1971</h3>
-                    <ul>
-                        <li><strong>1950–1970</strong> — Редактор <q>Нового мира</q></li>
-                        <li><strong>1960</strong> — <q>За далью — даль</q></li>
-                        <li><strong>1962</strong> — Публикация Солженицына</li>
-                        <li><strong>1971</strong> — Кончина поэта</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- МНОГОУРОВНЕВЫЙ СПИСОК (4.2.7) -->
-        <div style="margin: 45px 0 30px;">
-            <h2 style="font-family: 'Merriweather', serif; color: #2c3e2f; border-left: 5px solid #c49a6c; padding-left: 20px;"> Что вы найдёте на сайте</h2>
-            <ul class="multilevel-list">
-                <li> <strong>Биография</strong>
-                    <ul>
-                        <li>Детство на хуторе Загорье и первые публикации</li>
-                        <li>Учёба в Смоленске и МИФЛИ</li>
-                        <li>Военные годы: от финской войны до Победы</li>
-                        <li>Последние годы и неопубликованное наследие</li>
-                    </ul>
-                </li>
-                <li> <strong>Творчество</strong>
-                    <ul>
-                        <li>Лирика: <q>Я убит подо Ржевом</q>, <q>Памяти матери</q></li>
-                        <li>Поэмы: <q>Страна Муравия</q>, <q>Василий Тёркин</q></li>
-                        <li>Проза: <q>Родина и чужбина</q></li>
-                    </ul>
-                </li>
-                <li> <strong>Поэма «Василий Тёркин»</strong> — история создания, образ героя</li>
-                <li> <strong>Журнал «Новый мир»</strong> — эпоха Твардовского</li>
-            </ul>
-        </div>
-
-        <div class="decor-quote">
-            <p>«Нет, жизнь не обманула меня, не обошла стороной. Всё, что было, — было к месту.»</p>
-            <p style="margin-top: 12px;">— А.Т. Твардовский из «Рабочих тетрадей»</p>
         </div>
     </div>
-
-    <a href="#" class="go-top" id="goTopBtn">↑</a>
-
     <div class="footer">
         <div class="footer-inner">
             <div class="footer-copy">
@@ -139,7 +118,6 @@
         <div class="footer-right">© 2026 Все права защищены</div>
     </div>
 </div>
-
 <script src="function.js"></script>
 </body>
 </html>
